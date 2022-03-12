@@ -1,10 +1,10 @@
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components/macro'
 import GlobalStyles from './globalStyles'
 import { lightTheme, darkTheme } from './components/Themes'
 import Main from './components/Main'
 import Navbar from './components/Nav/Navbar'
 import NavProvider from './context/NavContext'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 function App() {
   const [theme, setTheme] = useState('lightTheme')

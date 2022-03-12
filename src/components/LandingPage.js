@@ -5,6 +5,8 @@ import { useNav } from '../hooks/useNav'
 const StyledLandingPage = styled.section`
   background-color: ${(props) => props.theme.navbar.body};
   height: 100vh;
+  transition: ${(props) => props.theme.themeTransition.transition};
+
 `
 
 const LandingPage = () => {

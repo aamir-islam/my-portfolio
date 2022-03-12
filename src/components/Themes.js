@@ -1,3 +1,7 @@
+const themeTransition = {
+  transition: 'background-color 0.5s ease-in-out',
+}
+
 export const lightTheme = {
   body: '#E2E2E2',
   text: '#363537',
@@ -9,6 +13,7 @@ export const lightTheme = {
     body: '#3E065F',
     text: '#E2E2E2',
   },
+  themeTransition: themeTransition,
 }
 
 export const darkTheme = {
@@ -17,6 +22,7 @@ export const darkTheme = {
   fontFamily: "'Source Sans Pro', sans-serif",
   textRgba: '252, 2546,244',
   bodyRgba: 'rgba(54, 53, 55, 0.7)',
+  themeTransition: themeTransition,
   navbar: {
     body: 'teal',
     text: '#E2E2E2',
