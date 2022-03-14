@@ -3,7 +3,7 @@ import { NavContext } from '../../context/NavContext'
 import styled from 'styled-components'
 
 const Span = styled.span`
-  font-size: 18px;
+  font-size: 20px;
   border-bottom: 1px solid transparent;
   transition: border-bottom 0.2s ease;
   transition-delay: 0.25s;
@@ -13,7 +13,7 @@ const Span = styled.span`
   cursor: pointer;
   &:hover {
     cursor: pointer;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
   }
 `
 const NavLink = ({ navLinkId, scrollToId }) => {

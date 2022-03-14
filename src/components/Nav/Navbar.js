@@ -11,6 +11,7 @@ import SunSvg from '../assets/SunSvg'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { ImCross } from 'react-icons/im'
 import { motion } from 'framer-motion'
+import { CgClose } from 'react-icons/cg'
 const StyledNavbar = styled.nav`
   background-color: ${(props) => props.theme.navbar.body};
   width: 100%;
@@ -38,12 +39,18 @@ const StyledLinks = styled.span`
 const StyledIcons = styled.span`
   & > * {
     font-size: 24px;
-    margin: 0 0.4rem;
+    margin: 0 0.8rem;
+    max-width: 250px;
+    /* border: 1px solid palegoldenrod; */
     cursor: pointer;
     align-self: center;
     transition: all 0.2s ease-in-out;
+
     @media (max-width: 768px) {
       display: none;
+    }
+    @media (max-width: 1000px) {
+      margin: 0 0.4rem;
     }
   }
 `
@@ -51,13 +58,14 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  @media (max-width: 768px) {
+  @media (max-width: 770px) {
     font-size: 24px;
   }
 `
 const HamburgerBtn = styled.i`
   font-size: 24px;
   display: none;
+  /* color: red; */
   cursor: pointer;
   @media (max-width: 768px) {
     display: block;
@@ -66,30 +74,56 @@ const HamburgerBtn = styled.i`
 const StyledMobileMenu = styled.div`
   position: fixed;
   top: 75px;
-  border: 1px solid pink;
+  /* border: 2px solid red; */
   right: 0;
   height: 50vh;
   width: 100%;
   z-index: 99;
   display: flex;
+  border-radius: 0 0 20px 20px;
+  background-color: #f7f7f7;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  @media screen and (min-width: 768px) {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  /* @media screen and (min-width: 768px) {
     width: 100%;
-  }
+  } */
 
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
-  &:hover {
-    color: lightgray;
-  }
 `
 const StyledMobileLink = styled.div`
-  color: black;
+  color: #0e1111;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  &:hover {
+    color: black;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+  }
+`
+const SocialMediaWrapper = styled.div`
+  /* border: 1px solid pink; */
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-around;
+  width: 220px;
+  font-size: 24px;
+  color: #3b444b;
+  min-height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  i:hover {
+    color: black;
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+  }
 `
 
 const Navbar = ({ theme, setTheme }) => {
@@ -105,20 +139,44 @@ const Navbar = ({ theme, setTheme }) => {
       </Button>
     )
   }
+  const SocialMediaIcons = () => {
+    return (
+      <>
+        <i>
+          <RiLinkedinFill />
+        </i>
+        <i>
+          <FiGithub />
+        </i>
+        <i>
+          <RiTwitterLine />
+        </i>
+        <i>
+          <HiOutlineMail />
+        </i>
+      </>
+    )
+  }
+
   const mobileMenu = () => {
     return (
       <StyledMobileMenu>
         {navLinks.map(({ navLinkId, scrollToId }, idx) => {
           return (
-            <StyledMobileLink onClick={() => setIsOpen(!isOpen)} key={idx}>
-              <NavLink
-                key={idx}
-                navLinkId={navLinkId}
-                scrollToId={scrollToId}
-              />
-            </StyledMobileLink>
+            <motion.div animate={{ x: [200, 0] }}>
+              <StyledMobileLink onClick={() => setIsOpen(!isOpen)} key={idx}>
+                <NavLink
+                  key={idx}
+                  navLinkId={navLinkId}
+                  scrollToId={scrollToId}
+                />
+              </StyledMobileLink>
+            </motion.div>
           )
         })}
+        <motion.div animate={{ x: [200, 0] }}>
+          <SocialMediaWrapper>{SocialMediaIcons()}</SocialMediaWrapper>
+        </motion.div>
       </StyledMobileMenu>
     )
   }
@@ -136,10 +194,7 @@ const Navbar = ({ theme, setTheme }) => {
         })}
       </StyledLinks>
       <StyledIcons>
-        <RiLinkedinFill />
-        <FiGithub />
-        <RiTwitterLine />
-        <HiOutlineMail />
+        {SocialMediaIcons()}
         {themeSwitch()}
       </StyledIcons>
       <HamburgerBtn>
@@ -157,7 +212,8 @@ const Navbar = ({ theme, setTheme }) => {
               animate={{ rotate: 360, x: ['25px', '0px'] }}
               transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
             >
-              <ImCross onClick={() => setIsOpen(false)} />
+              {/* <GrClose onClick={() => setIsOpen(false)} color='white'/> */}
+              <CgClose size={'28px'} onClick={() => setIsOpen(false)} />
             </motion.div>
           ) : (
             <motion.div
