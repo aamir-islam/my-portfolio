@@ -1,5 +1,5 @@
 const themeTransition = {
-  transition: 'background-color 0.5s ease-in-out',
+  transition: 'background-color 0.5s linear',
 }
 
 export const lightTheme = {

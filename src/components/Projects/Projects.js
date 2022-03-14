@@ -5,6 +5,8 @@ import { useNav } from '../../hooks/useNav'
 const StyledProjects = styled.section`
   background-color: lightcoral;
   height: 94vh;
+  width: 100%;
+
 `
 const Projects = () => {
   const projectsRef = useNav('Projects')
