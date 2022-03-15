@@ -106,10 +106,13 @@ const LandingPage = ({ isOpen }) => {
         </motion.div>
       </StyledLeft>
       <StyledRight>
-        <img
+        <motion.img
           src='images/Programming.gif'
           alt='hero image'
           aria-label='hero image'
+          animate={{ opacity: 1, x: ['100px', '0px'] }}
+          initial={{ opacity: 0 }}
+          transition={{ delay: 0.3 }}
         />
       </StyledRight>
     </StyledLandingPage>
