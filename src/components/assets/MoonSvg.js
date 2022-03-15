@@ -9,7 +9,7 @@ export const MoonIcon = () => {
     whileTap,
   }
 
-  const fillColor = 'HSL(240°, 100%, 95%)'
+  const fillColor = '#E2E2E2'
 
   return (
     <motion.svg

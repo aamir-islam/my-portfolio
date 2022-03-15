@@ -10,8 +10,10 @@ export const lightTheme = {
   textRgba: 'rgba(54, 53, 55, 0.7)',
   color: 'orange',
   navbar: {
-    body: '#3E065F',
-    text: '#E2E2E2',
+    body: '#0a192f',
+    // text: '#E2E2E2',
+    text: '#FFF',
+    borderBottom: '1px solid #FFF',
   },
   themeTransition: themeTransition,
 }
@@ -24,7 +26,8 @@ export const darkTheme = {
   bodyRgba: 'rgba(54, 53, 55, 0.7)',
   themeTransition: themeTransition,
   navbar: {
-    body: 'teal',
-    text: '#E2E2E2',
+    body: '#FFF',
+    text: '#0e1111',
+    borderBottom: '1px solid #000',
   },
 }

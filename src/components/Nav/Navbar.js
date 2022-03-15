@@ -24,10 +24,12 @@ const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
   transition: ${(props) => props.theme.themeTransition.transition};
 `
 const StyledName = styled.span`
-  color: white;
+  color: ${(props) => props.theme.navbar.text};
   font-size: 28px;
   font-weight: 900;
 `
@@ -41,10 +43,14 @@ const StyledIcons = styled.span`
     font-size: 24px;
     margin: 0 0.8rem;
     max-width: 250px;
-    /* border: 1px solid palegoldenrod; */
     cursor: pointer;
     align-self: center;
     transition: all 0.2s ease-in-out;
+    &:hover {
+      color: ${(props) => props.theme.navbar.text};
+      transition: all 0.2s ease-in-out;
+      opacity: 0.8;
+    }
 
     @media (max-width: 768px) {
       display: none;
@@ -91,11 +97,11 @@ const StyledMobileMenu = styled.div`
     width: 100%;
   } */
 
-  user-select: none; /* supported by Chrome and Opera */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 `
 const StyledMobileLink = styled.div`
   color: #0e1111;
@@ -117,16 +123,17 @@ const SocialMediaWrapper = styled.div`
   width: 220px;
   font-size: 24px;
   color: #3b444b;
+  padding-top: 2px;
   min-height: 40px;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   i:hover {
     color: black;
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: all 0.2s ease-in-out;
   }
 `
 
-const Navbar = ({ theme, setTheme }) => {
+const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const toggleTheme = () => {
     if (theme === 'lightTheme') setTheme('darkTheme')
     else setTheme('lightTheme')
@@ -142,16 +149,16 @@ const Navbar = ({ theme, setTheme }) => {
   const SocialMediaIcons = () => {
     return (
       <>
-        <i>
+        <i role='menuitem' title='linkedin' tabIndex='0s'>
           <RiLinkedinFill />
         </i>
-        <i>
+        <i role='menuitem' title='Github' tabIndex='0s'>
           <FiGithub />
         </i>
-        <i>
+        <i role='menuitem' title='Twitter' tabIndex='0s'>
           <RiTwitterLine />
         </i>
-        <i>
+        <i role='menuitem' title='Email' tabIndex='0s'>
           <HiOutlineMail />
         </i>
       </>
@@ -163,8 +170,8 @@ const Navbar = ({ theme, setTheme }) => {
       <StyledMobileMenu>
         {navLinks.map(({ navLinkId, scrollToId }, idx) => {
           return (
-            <motion.div animate={{ x: [200, 0] }}>
-              <StyledMobileLink onClick={() => setIsOpen(!isOpen)} key={idx}>
+            <motion.div animate={{ x: [200, 0] }} key={idx}>
+              <StyledMobileLink onClick={() => setIsOpen(!isOpen)}>
                 <NavLink
                   key={idx}
                   navLinkId={navLinkId}
@@ -175,17 +182,19 @@ const Navbar = ({ theme, setTheme }) => {
           )
         })}
         <motion.div animate={{ x: [200, 0] }}>
-          <SocialMediaWrapper>{SocialMediaIcons()}</SocialMediaWrapper>
+          <SocialMediaWrapper role='menuitem'>
+            {SocialMediaIcons()}
+          </SocialMediaWrapper>
         </motion.div>
       </StyledMobileMenu>
     )
   }
 
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
     <StyledNavbar>
-      <StyledName>Aryaman Singh</StyledName>
+      <StyledName title='name' role='heading' aria-label='name'>
+        Aryaman Singh
+      </StyledName>
       <StyledLinks>
         {navLinks.map(({ navLinkId, scrollToId }, idx) => {
           return (
@@ -197,7 +206,7 @@ const Navbar = ({ theme, setTheme }) => {
         {SocialMediaIcons()}
         {themeSwitch()}
       </StyledIcons>
-      <HamburgerBtn>
+      <HamburgerBtn aria-label='menu' role='menubar'>
         <span
           style={{
             display: 'flex',
@@ -213,7 +222,12 @@ const Navbar = ({ theme, setTheme }) => {
               transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
             >
               {/* <GrClose onClick={() => setIsOpen(false)} color='white'/> */}
-              <CgClose size={'28px'} onClick={() => setIsOpen(false)} />
+              <CgClose
+                size={'28px'}
+                onClick={() => setIsOpen(false)}
+                title='close'
+                role='button  '
+              />
             </motion.div>
           ) : (
             <motion.div

@@ -13,7 +13,12 @@ const Span = styled.span`
   cursor: pointer;
   &:hover {
     cursor: pointer;
-    border-bottom: 1px solid black;
+    border-bottom: ${(props) => props.theme.navbar.borderBottom};
+  }
+  @media (max-width: 768px) {
+    &:hover {
+      border-bottom: 1px solid black;
+    }
   }
 `
 const NavLink = ({ navLinkId, scrollToId }) => {
@@ -29,6 +34,9 @@ const NavLink = ({ navLinkId, scrollToId }) => {
       id={navLinkId}
       onClick={handleClick}
       borderBottom={activeNavLinkId === navLinkId ? true : ''}
+      role='link'
+      title={navLinkId}
+      tabIndex='0'
     >
       {navLinkId}
     </Span>
