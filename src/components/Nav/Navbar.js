@@ -29,9 +29,11 @@ const StyledNavbar = styled.nav`
   transition: ${(props) => props.theme.themeTransition.transition};
 `
 const StyledName = styled.span`
-  color: ${(props) => props.theme.navbar.text};
-  font-size: 28px;
-  font-weight: 900;
+  transition: all 1.5s linear;
+  img {
+    height: 80px;
+    width: auto;
+  }
 `
 const StyledLinks = styled.span`
   @media (max-width: 768px) {
@@ -193,7 +195,17 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
   return (
     <StyledNavbar>
       <StyledName title='name' role='heading' aria-label='name'>
-        Aryaman Singh
+        <img
+          src={
+            theme === 'darkTheme'
+              ? 'images/nameDark.png'
+              : 'images/nameLight.png'
+          }
+          alt='initials'
+          title='initials'
+          tabIndex='0'
+          role='initials image'
+        />
       </StyledName>
       <StyledLinks>
         {navLinks.map(({ navLinkId, scrollToId }, idx) => {

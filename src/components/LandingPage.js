@@ -109,10 +109,29 @@ const LandingPage = ({ theme }) => {
             initial={{ opacity: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <StyledH4>Hi, my name is</StyledH4>
-            <StyledH1>Aryaman Singh.</StyledH1>
-            <StyledH3>A Frontend Developer.</StyledH3>
-            <StyledP>
+            <StyledH4
+              aria-label='hi my name is'
+              role='article'
+              tabIndex='0'
+              title='hi my name is'
+            >
+              Hi, my name is
+            </StyledH4>
+            <StyledH1
+              aria-label='I am a software engineer'
+              role='article'
+              tabIndex='0'
+            >
+              Aryaman Singh.
+            </StyledH1>
+            <StyledH3
+              aria-label='A frontend developer'
+              role='article'
+              tabIndex='0'
+            >
+              A Frontend Developer.
+            </StyledH3>
+            <StyledP aria-label='paragraph' role='article' tabIndex='0'>
               I&apos;m a software engineer intern at Cognizant. An autodidact
               frontend developer with a passion for creating and building
               things. I like to craft solid and scalable frontend products with
