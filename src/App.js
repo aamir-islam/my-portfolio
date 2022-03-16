@@ -7,7 +7,7 @@ import NavProvider from './context/NavContext'
 import { useState } from 'react'
 
 function App() {
-  const [theme, setTheme] = useState('lightTheme')
+  const [theme, setTheme] = useState('darkTheme')
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
@@ -20,7 +20,7 @@ function App() {
             theme={theme}
             setTheme={setTheme}
           />
-          <Main isOpen={isOpen} />
+          <Main theme={theme} />
         </NavProvider>
       </ThemeProvider>
     </>

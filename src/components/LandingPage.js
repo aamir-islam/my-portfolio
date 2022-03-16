@@ -2,24 +2,33 @@ import React from 'react'
 import styled from 'styled-components'
 import { useNav } from '../hooks/useNav'
 import { motion } from 'framer-motion'
+
+const StyledWrapper = styled.section`
+  transition: ${(props) => props.theme.themeTransition.transition};
+  background-image: ${(props) => props.theme.landingPage.backgroundImage};
+  -webkit-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
+  background-repeat: no-repeat;
+  background-size: cover;
+`
+
 const StyledLandingPage = styled.section`
-  /* background-color: ${(props) => props.theme.navbar.body}; */
-  /* transition: ${(props) => props.theme.themeTransition.transition}; */
-  min-height: 100vh;
-  /* border: 2px solid red; */
+  color: ${(props) => props.theme.landingPage.text};
+  transition: color 0.5s linear;
+  min-height: 101vh;
   width: 80%;
+  /* border: 1px solid red; */
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  /* box-sizing: border-box; */
   letter-spacing: 1.1px;
   & > * {
     -webkit-font-smoothing: antialiased;
   }
   @media (max-width: 500px) {
     width: 100%;
+    margin-top: -2rem;
     flex-direction: column;
   }
 `
@@ -28,22 +37,28 @@ const StyledLeft = styled.div`
   width: 50%;
   height: 500px;
   background-position: center;
+  @media (max-width: 999px) {
+    height: 700px;
+  }
   @media (max-width: 500px) {
     width: 90%;
-    height: 320px;
-    /* margin-top: -5rem; */
+    height: 250px;
   }
 `
 const StyledRight = styled.div`
   width: 50%;
   /* border: 1px solid tan; */
   display: flex;
-  align-items: center;
+  height: 700px;
+  align-items: flex-start;
   justify-content: center;
   img {
     /* border: 1px solid rosybrown; */
-    min-width: 300px;
-    width: 60%;
+    min-width: 350px;
+    width: 80%;
+    height: auto;
+  }
+  @media (max-width: 500px) {
     height: auto;
   }
 `
@@ -83,39 +98,45 @@ const StyledP = styled.p`
     margin-top: 5px;
   }
 `
-const LandingPage = ({ isOpen }) => {
+const LandingPage = ({ theme }) => {
   const landingPageRef = useNav('Home') // this is the ref for the navbar
-
   return (
-    <StyledLandingPage ref={landingPageRef} id='landingContainer'>
-      <StyledLeft>
-        <motion.div
-          animate={{ opacity: 1, x: ['-100px', '0px'] }}
-          initial={{ opacity: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <StyledH4>Hi, my name is</StyledH4>
-          <StyledH1>Aryaman Singh.</StyledH1>
-          <StyledH3>A Frontend Developer.</StyledH3>
-          <StyledP>
-            I&apos;m a software engineer intern at Cognizant. An autodidact
-            frontend developer with a passion for creating and building things.
-            I like to craft solid and scalable frontend products with great user
-            experiences.
-          </StyledP>
-        </motion.div>
-      </StyledLeft>
-      <StyledRight>
-        <motion.img
-          src='images/Programming.gif'
-          alt='hero image'
-          aria-label='hero image'
-          animate={{ opacity: 1, x: ['100px', '0px'] }}
-          initial={{ opacity: 0 }}
-          transition={{ delay: 0.3 }}
-        />
-      </StyledRight>
-    </StyledLandingPage>
+    <StyledWrapper>
+      <StyledLandingPage ref={landingPageRef} id='landingContainer'>
+        <StyledLeft>
+          <motion.div
+            animate={{ opacity: 1, x: ['-100px', '0px'] }}
+            initial={{ opacity: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <StyledH4>Hi, my name is</StyledH4>
+            <StyledH1>Aryaman Singh.</StyledH1>
+            <StyledH3>A Frontend Developer.</StyledH3>
+            <StyledP>
+              I&apos;m a software engineer intern at Cognizant. An autodidact
+              frontend developer with a passion for creating and building
+              things. I like to craft solid and scalable frontend products with
+              great user experiences.
+            </StyledP>
+          </motion.div>
+        </StyledLeft>
+        <StyledRight>
+          <motion.img
+            src={
+              theme === 'darkTheme'
+                ? 'images/landingHero.svg'
+                : 'images/landingHeroInvert.svg'
+            }
+            // src='images/Programming.gif'
+            alt='hero image'
+            aria-label='hero image'
+            animate={{ opacity: 1, x: ['100px', '0px'] }}
+            initial={{ opacity: 0 }}
+            transition={{ delay: 0.3 }}
+          />
+        </StyledRight>
+      </StyledLandingPage>
+    </StyledWrapper>
   )
 }
 
