@@ -101,8 +101,8 @@ const StyledP = styled.p`
 const LandingPage = ({ theme }) => {
   const landingPageRef = useNav('Home') // this is the ref for the navbar
   return (
-    <StyledWrapper>
-      <StyledLandingPage ref={landingPageRef} id='landingContainer'>
+    <StyledWrapper ref={landingPageRef} id='landingContainer'>
+      <StyledLandingPage>
         <StyledLeft>
           <motion.div
             animate={{ opacity: 1, x: ['-100px', '0px'] }}

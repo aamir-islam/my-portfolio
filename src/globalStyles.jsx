@@ -6,6 +6,11 @@ const GlobalStyles = createGlobalStyle`
     padding:0;
     
 }
+ul, li{
+  list-style: none;
+  padding: 0;
+}
+
 body{
     box-sizing: border-box;
     margin:0;

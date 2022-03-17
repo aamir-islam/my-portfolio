@@ -11,7 +11,7 @@ const Main = ({ theme, isOpen }) => {
       }}
     >
       <LandingPage theme={theme} />
-      <AboutMe />
+      <AboutMe theme={theme} />
       <Projects />
     </div>
   )
