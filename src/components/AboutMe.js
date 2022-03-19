@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { useNav } from '../hooks/useNav'
 import { Fade } from 'react-awesome-reveal'
-import ParticleConfig from './particle-config'
 import Particles from 'react-tsparticles'
 const StyledAboutMeWrapper = styled.section`
   /* border: 1px solid red; */
