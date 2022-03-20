@@ -68,7 +68,8 @@ const StyledFeaturedProjects = styled.div`
   max-width: 1000px;
   margin: 2rem auto;
   align-items: center;
-
+  transition: all 0.3s linear;
+  
   @media (max-width: 500px) {
     flex-direction: column;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -194,8 +195,16 @@ const StyledLinks = styled.div`
   font-size: 24px;
   text-align: right;
   a {
+    color: #404040;
     &:first-of-type {
       padding-right: 1rem;
+    }
+
+    &:hover {
+      svg {
+        transition: all 0.1s ease-in-out;
+        transform: translateY(-3px) translateZ(0px);
+      }
     }
   }
   @media (max-width: 500px) {
@@ -233,7 +242,7 @@ const Projects = () => {
                   <a href={project.github} target='_blank' rel='noreferrer'>
                     <FiGithub />
                   </a>
-                  <a>
+                  <a href={project.live} target='_blank' rel='noreferrer'>
                     <FiExternalLink />
                   </a>
                 </StyledLinks>
