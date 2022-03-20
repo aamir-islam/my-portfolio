@@ -4,8 +4,7 @@ import { useNav } from '../hooks/useNav'
 import { Fade } from 'react-awesome-reveal'
 import Particles from 'react-tsparticles'
 const StyledAboutMeWrapper = styled.section`
-  /* border: 1px solid red; */
-  width: 80%;
+  /* border: 2px solid teal; */
   margin: 1rem auto;
   @media (max-width: 500px) {
     width: 100%;
@@ -15,7 +14,9 @@ const StyledAboutMeWrapper = styled.section`
 const StyledAboutMe = styled.section`
   box-sizing: border-box;
   min-height: 100vh;
-  width: 100%;
+  width: 80%;
+  /* border: 1px solid red; */
+  margin: 0 auto;
   color: #404040;
   display: flex;
   flex-direction: column;
@@ -244,10 +245,10 @@ const AboutMe = () => {
             id='tsparticles'
             init={particlesInit}
             loaded={particlesLoaded}
-            width='95vw'
+            width='93vw'
             style={{
               position: 'absolute',
-              marginLeft: '-7rem',
+              marginLeft: '-8rem',
             }}
             options={{
               fpsLimit: 60,
