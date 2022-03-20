@@ -32,7 +32,7 @@ const H1 = styled.h1`
   margin-top: 4rem;
   font-family: 'Inter', sans-serif;
   @media (max-width: 500px) {
-    /* margin-top: 4.5rem; */
+    margin-top: 4.5rem;
   }
 `
 
@@ -232,10 +232,10 @@ const AboutMe = () => {
   const aboutRef = useNav('About')
 
   const particlesInit = (main) => {
-    console.log(main)
+    // console.log(main)
   }
   const particlesLoaded = (container) => {
-    console.log(container)
+    // console.log(container)
   }
   return (
     <StyledAboutMeWrapper>
