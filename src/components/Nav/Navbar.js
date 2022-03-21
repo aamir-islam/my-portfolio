@@ -47,6 +47,7 @@ const StyledIcons = styled.span`
     cursor: pointer;
     align-self: center;
     transition: all 0.2s ease-in-out;
+
     &:hover {
       color: ${(props) => props.theme.navbar.text};
       transition: all 0.2s ease-in-out;
@@ -61,6 +62,17 @@ const StyledIcons = styled.span`
     }
   }
 `
+const StyledA = styled.a`
+  color: ${(props) => props.theme.navbar.text};
+  &:first-of-type {
+    opacity: 0.86;
+  }
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+  }
+`
+
 const Button = styled.button`
   background-color: transparent;
   border: none;
@@ -127,6 +139,10 @@ const SocialMediaWrapper = styled.div`
   padding-top: 2px;
   min-height: 40px;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+
+  a {
+    color: #3b444b;
+  }
   i:hover {
     color: black;
     transform: scale(1.1);
@@ -166,7 +182,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const SocialMediaIcons = () => {
     return (
       <>
-        <a
+        <StyledA
           href='https://www.linkedin.com/in/aryaman-singh2803/'
           target='_blank'
           rel='noopener noreferrer'
@@ -176,8 +192,8 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           aria-label='linkedin icon'
         >
           <ImLinkedin2 />
-        </a>
-        <a
+        </StyledA>
+        <StyledA
           href='https://github.com/Aryaman2803'
           target='_blank'
           rel='noopener noreferrer'
@@ -187,7 +203,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           aria-label='github icon'
         >
           <FiGithub />
-        </a>
+        </StyledA>
         <i
           role='menuitem'
           title='Twitter'
