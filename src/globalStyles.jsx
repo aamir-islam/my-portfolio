@@ -15,7 +15,6 @@ body{
     box-sizing: border-box;
     margin:0;
     padding:0;
-    // font-family: 'Karla', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
     /* font-family: 'Inter', sans-serif;   -> FOR LANDING PAGE TEXT*/ 
     /* font-family: 'Roboto Mono', monospace; -> FOR LANDING PAGE TEXT*/

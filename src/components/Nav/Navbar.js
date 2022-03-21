@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 import NavLink from './NavLink'
 import { navLinks } from './navLinks'
-import { RiLinkedinFill } from 'react-icons/ri'
-import { FiGithub } from 'react-icons/fi'
-import { RiTwitterLine } from 'react-icons/ri'
-import { HiOutlineMail } from 'react-icons/hi'
+import { HiOutlineMenu } from 'react-icons/hi/index.esm'
+import { FiTwitter, FiGithub, FiMail } from 'react-icons/fi/index.esm'
+import { ImLinkedin2 } from 'react-icons/im/index.esm'
+import { VscClose } from 'react-icons/vsc/index.esm'
+
+import { motion } from 'framer-motion'
 import MoonSvg from '../assets/MoonSvg'
 import SunSvg from '../assets/SunSvg'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { ImCross } from 'react-icons/im'
-import { motion } from 'framer-motion'
-import { CgClose } from 'react-icons/cg'
+
 const StyledNavbar = styled.nav`
   background-color: ${(props) => props.theme.navbar.body};
   width: 100%;
@@ -32,7 +31,7 @@ const StyledName = styled.span`
   transition: all 1.5s linear;
   img {
     height: 80px;
-    width: auto;
+    width: 90px;
   }
 `
 const StyledLinks = styled.span`
@@ -144,24 +143,61 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const themeSwitch = () => {
     return (
       <Button onClick={toggleTheme}>
-        {theme === 'lightTheme' ? <MoonSvg /> : <SunSvg />}
+        {theme === 'lightTheme' ? (
+          <i
+            role='button'
+            title='dark theme moon button'
+            aria-label='theme switcher button'
+          >
+            <MoonSvg />
+          </i>
+        ) : (
+          <i
+            role='button'
+            title='light theme moon button'
+            aria-label='theme switcher button'
+          >
+            <SunSvg />
+          </i>
+        )}
       </Button>
     )
   }
   const SocialMediaIcons = () => {
     return (
       <>
-        <i role='menuitem' title='linkedin' tabIndex='0s'>
-          <RiLinkedinFill />
-        </i>
-        <i role='menuitem' title='Github' tabIndex='0s'>
+        <a
+          href='https://www.linkedin.com/in/aryaman-singh2803/'
+          target='_blank'
+          rel='noopener noreferrer'
+          role='menuitem'
+          title='linkedin'
+          tabIndex='0s'
+          aria-label='linkedin icon'
+        >
+          <ImLinkedin2 />
+        </a>
+        <a
+          href='https://github.com/Aryaman2803'
+          target='_blank'
+          rel='noopener noreferrer'
+          role='menuitem'
+          title='Github'
+          tabIndex='0s'
+          aria-label='github icon'
+        >
           <FiGithub />
+        </a>
+        <i
+          role='menuitem'
+          title='Twitter'
+          tabIndex='0s'
+          aria-label='twitter icon'
+        >
+          <FiTwitter />
         </i>
-        <i role='menuitem' title='Twitter' tabIndex='0s'>
-          <RiTwitterLine />
-        </i>
-        <i role='menuitem' title='Email' tabIndex='0s'>
-          <HiOutlineMail />
+        <i role='menuitem' title='Email' tabIndex='0s' aria-label='email icon'>
+          <FiMail />
         </i>
       </>
     )
@@ -204,7 +240,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           alt='initials'
           title='initials'
           tabIndex='0'
-          role='initials image'
+          aria-label='initials'
         />
       </StyledName>
       <StyledLinks>
@@ -233,12 +269,11 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
               animate={{ rotate: 360, x: ['25px', '0px'] }}
               transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
             >
-              {/* <GrClose onClick={() => setIsOpen(false)} color='white'/> */}
-              <CgClose
-                size={'28px'}
+              <VscClose
+                size={'32px'}
                 onClick={() => setIsOpen(false)}
                 title='close'
-                role='button  '
+                role='button'
               />
             </motion.div>
           ) : (
@@ -246,7 +281,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
               animate={{ x: ['25px', '0px'] }}
               transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
             >
-              <GiHamburgerMenu onClick={() => setIsOpen(true)} />
+              <HiOutlineMenu onClick={() => setIsOpen(true)} />
             </motion.div>
           )}
         </span>

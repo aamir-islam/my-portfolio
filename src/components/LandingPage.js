@@ -56,7 +56,10 @@ const StyledRight = styled.div`
     /* border: 1px solid rosybrown; */
     min-width: 350px;
     width: 80%;
-    height: auto;
+    height: 550px;
+    @media (max-width: 500px) {
+      height: 350px;
+    }
   }
   @media (max-width: 500px) {
     height: auto;

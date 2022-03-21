@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useNav } from '../../hooks/useNav'
-import { FiGithub } from 'react-icons/fi'
-import { FiExternalLink } from 'react-icons/fi'
+import { FiGithub } from 'react-icons/fi/index.esm'
+import { FiExternalLink } from 'react-icons/fi/index.esm'
 import { FeaturedProjectsList } from '../assets/projects'
 
 const StyledProjectsWrapper = styled.section`
@@ -69,11 +69,11 @@ const StyledFeaturedProjects = styled.div`
   margin: 2rem auto;
   align-items: center;
   transition: all 0.3s linear;
-  
+
   @media (max-width: 500px) {
     flex-direction: column;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
@@ -104,7 +104,7 @@ const StyledLeft = styled.div`
 const StyledRight = styled.div`
   width: 50%;
   /* border: 1px solid orange; */
-  min-height: 00px;
+  min-height: 280px;
   max-width: 26rem;
   z-index: 2;
 

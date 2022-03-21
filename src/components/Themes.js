@@ -4,12 +4,12 @@ const themeTransition = {
 const landingPage = {
   light: {
     text: '#FFFFFF',
-    backgroundImage: 'url("images/landingInvert.png")',
+    backgroundImage: 'url("images/landingInvert.webp")',
     landingHero: 'url("images/landingHeroInvert.png")',
   },
   dark: {
     text: '#262c2e',
-    backgroundImage: 'url("images/landing.png")',
+    backgroundImage: 'url("images/landing.webp")',
     landingHero: 'url("images/landingHero.svg")',
     
   },
