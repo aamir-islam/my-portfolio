@@ -33,3 +33,33 @@ export const FeaturedProjectsList = [
     github: 'https://github.com/Aryaman2803/instagram-clone',
   },
 ]
+
+export const OtherProjects = [
+  {
+    id: 1,
+    title: 'Camping',
+    description:
+      'Camping is a website where users can create and review campgrounds they have visited or want to explore camping sites for their travel destination.',
+    languages: ['EJS', 'Express', 'Node.js', 'MongoDB', 'Bootstrap'],
+    live: 'https://campinggrounds.herokuapp.com/',
+    github: 'https://github.com/Aryaman2803/Camping',
+  },
+  {
+    id: 2,
+    title: 'GetSupplies',
+    description:
+      'GetSupplies is an e-commerce website where users can buy products. Complete with a shopping cart, checkout, and payment functionality.',
+    languages: ['EJS', 'Express', 'MongoDB', 'Stripe', 'SASS'],
+    live: 'https://getsupplies.herokuapp.com/index',
+    github: 'https://github.com/Aryaman2803/E-Commerce-Website',
+  },
+  {
+    id: 3,
+    title: 'Hyperstream',
+    description:
+      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
+    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
+    live: 'https://hyperstream.vercel.app/',
+    github: 'https://github.com/Aryaman2803/React-Chat-App',
+  },
+]

@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutMe from './AboutMe'
 import LandingPage from './LandingPage'
+import MoreProjects from './Projects/MoreProjects'
 import Projects from './Projects/Projects'
 
 const Main = ({ theme, isOpen }) => {
@@ -13,6 +14,7 @@ const Main = ({ theme, isOpen }) => {
       <LandingPage theme={theme} />
       <AboutMe theme={theme} />
       <Projects />
+      <MoreProjects />
     </div>
   )
 }

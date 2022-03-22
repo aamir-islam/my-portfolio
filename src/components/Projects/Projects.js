@@ -1,8 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { useNav } from '../../hooks/useNav'
-import { FiGithub } from 'react-icons/fi/index.esm'
-import { FiExternalLink } from 'react-icons/fi/index.esm'
+import { FiGithub, FiExternalLink } from 'react-icons/fi/index.esm'
 import { FeaturedProjectsList } from '../assets/projects'
 
 const StyledProjectsWrapper = styled.section`
@@ -58,15 +57,21 @@ const P = styled.p`
     margin-bottom: 2rem;
   }
 `
-const StyledFeaturedProjectsWrapper = styled.div`
-  /* border: 1px solid #404040; */
-`
 
 const StyledFeaturedProjects = styled.div`
   /* border: 1px solid #404040; */
   display: flex;
   max-width: 1000px;
-  margin: 2rem auto;
+  &:not(:last-child) {
+    margin: 7rem auto;
+
+    @media(max-width: 500px) {
+      margin: 2rem auto;
+    }
+  }
+  &:last-child {
+    margin: 0 auto;
+  }
   align-items: center;
   transition: all 0.3s linear;
 
@@ -82,7 +87,7 @@ const StyledFeaturedProjects = styled.div`
 const StyledLeft = styled.div`
   width: 50%;
   /* border: 1px solid teal; */
-  height: 400px;
+  height: 300px;
   text-align: right;
   /* background: url('images/typing.PNG'); */
   background: url(${(props) => props.url});
@@ -170,8 +175,6 @@ const StyledRight = styled.div`
 `
 const StyledLanguagesUsed = styled.div`
   display: flex;
-  /* max-width: 95  %; */
-  /* border: 1px solid red; */
   margin-top: 2rem;
   float: right;
   font-size: 13px;
@@ -223,7 +226,6 @@ const Projects = () => {
           Here are some of my most favourite projects that I enjoyed coding and
           designing from scratch.
         </P>
-        {/* <StyledFeaturedProjectsWrapper> */}
         {FeaturedProjectsList.map((project) => {
           return (
             <StyledFeaturedProjects key={project.id}>
@@ -250,8 +252,6 @@ const Projects = () => {
             </StyledFeaturedProjects>
           )
         })}
-
-        {/* </StyledFeaturedProjectsWrapper> */}
       </StyledProjects>
     </StyledProjectsWrapper>
   )
