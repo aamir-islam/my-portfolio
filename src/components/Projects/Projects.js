@@ -55,7 +55,7 @@ const H3 = styled.h3`
   }
 
   @media (max-width: 500px) {
-    margin-top: 4.5rem;
+    /* margin-top: 4.5rem; */
   }
 `
 const P = styled.p`
@@ -90,7 +90,7 @@ const StyledFeaturedProjects = styled.div`
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
       rgba(17, 17, 26, 0.1) 0px 0px 8px;
     padding: 1rem;
-    
+
     border-radius: 8px;
     margin-top: 1rem;
   }
@@ -163,6 +163,7 @@ const StyledRight = styled.div`
     margin-left: -100px;
     font-size: 1rem;
     font-weight: 400;
+    letter-spacing: 0.7px;
     padding: 1.5rem 2rem;
     min-height: 60px;
     box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
@@ -181,9 +182,9 @@ const StyledRight = styled.div`
       margin-left: 0;
       box-shadow: none;
       background-color: transparent;
-      font-weight: 500;
+      font-weight: ${(props) => props.theme.projectCardFontWeight};
       /* color: black; */
-      color: ${(props) => props.theme.lightText};
+      color: ${(props) => props.theme.text};
       text-align: left;
       padding: 1.5rem 0;
     }
@@ -199,7 +200,7 @@ const StyledLanguagesUsed = styled.div`
   display: flex;
   margin-top: 2rem;
   float: right;
-  font-size: 13px;
+  font-size: 13.5px;
   justify-content: space-evenly;
   font-family: 'Roboto Mono', monospace;
   color: ${(props) => props.theme.lightText};
@@ -217,7 +218,8 @@ const StyledLanguagesUsed = styled.div`
   }
 `
 const StyledLinks = styled.div`
-  margin-top: 4rem;
+  margin-top: 6rem;
+  padding-top: 0.5rem;
   font-size: 24px;
   text-align: right;
   a {
