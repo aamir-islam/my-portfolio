@@ -186,7 +186,6 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           href='https://www.linkedin.com/in/aryaman-singh2803/'
           target='_blank'
           rel='noopener noreferrer'
-          role='menuitem'
           title='linkedin'
           tabIndex='0s'
           aria-label='linkedin icon'
@@ -197,22 +196,16 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           href='https://github.com/Aryaman2803'
           target='_blank'
           rel='noopener noreferrer'
-          role='menuitem'
           title='Github'
           tabIndex='0s'
           aria-label='github icon'
         >
           <FiGithub />
         </StyledA>
-        <i
-          role='menuitem'
-          title='Twitter'
-          tabIndex='0s'
-          aria-label='twitter icon'
-        >
+        <i tabIndex='0s' title='Twitter'>
           <FiTwitter />
         </i>
-        <i role='menuitem' title='Email' tabIndex='0s' aria-label='email icon'>
+        <i title='Email' tabIndex='0s'>
           <FiMail />
         </i>
       </>
@@ -236,9 +229,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           )
         })}
         <motion.div animate={{ x: [200, 0] }}>
-          <SocialMediaWrapper role='menuitem'>
-            {SocialMediaIcons()}
-          </SocialMediaWrapper>
+          <SocialMediaWrapper>{SocialMediaIcons()}</SocialMediaWrapper>
         </motion.div>
       </StyledMobileMenu>
     )
@@ -246,7 +237,13 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
 
   return (
     <StyledNavbar>
-      <StyledName title='name' role='heading' aria-label='name'>
+      <StyledName
+        title='name'
+        role='img'
+        aria-label='name'
+        tabIndex='-1'
+        aria-labelledby='aryaman'
+      >
         <img
           src={
             theme === 'darkTheme'
@@ -257,6 +254,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           title='initials'
           tabIndex='0'
           aria-label='initials'
+          aria-labelledby='aryaman'
         />
       </StyledName>
       <StyledLinks>

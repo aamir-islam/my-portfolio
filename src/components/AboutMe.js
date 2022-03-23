@@ -4,8 +4,8 @@ import { useNav } from '../hooks/useNav'
 import { Fade } from 'react-awesome-reveal'
 import Particles from 'react-tsparticles'
 const StyledAboutMeWrapper = styled.section`
-  /* border: 2px solid teal; */
-  margin: 1rem auto;
+  transition: ${(props) => props.theme.themeTransition.transition};
+  background-color: ${(props) => props.theme.body};
   @media (max-width: 500px) {
     width: 100%;
   }
@@ -17,7 +17,9 @@ const StyledAboutMe = styled.section`
   width: 80%;
   /* border: 1px solid red; */
   margin: 0 auto;
-  color: #404040;
+
+  /* color: #404040; */
+  color: ${(props) => props.theme.text};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,6 +32,7 @@ const H1 = styled.h1`
   font-size: clamp(40px, 5.5vw, 60px);
   margin-bottom: 2rem;
   margin-top: 4rem;
+  padding-top: 1rem;
   font-family: 'Inter', sans-serif;
   @media (max-width: 500px) {
     margin-top: 4.5rem;
@@ -60,12 +63,15 @@ const Article = styled.article`
   /* border: 3px solid purple; */
   line-height: 1.2;
   font-size: clamp(18px, 4vw, 22px);
-  /* font-size: 20px; */
+  color: ${(props) => props.theme.lightText};
   letter-spacing: 0.8px;
   img {
+    height: 20px;
+    width: 20px;
     vertical-align: bottom;
     &:hover {
       height: 40px;
+      width: auto;
       transition: height 0.4s ease-in-out;
     }
     &:not(:hover) {
@@ -121,6 +127,7 @@ const StyledLiContent = styled.div`
   max-width: 400px;
   padding: 1rem;
   border-radius: 10px;
+  color: ${(props) => props.theme.text};
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
@@ -165,10 +172,12 @@ const StyledLi = styled.li`
   p {
     font-weight: 400;
     font-size: 0.985rem;
+    color: ${(props) => props.theme.lightText};
   }
   span {
     font-weight: 400;
     font-size: 0.9rem;
+    color: ${(props) => props.theme.lightText};
   }
 
   @media (max-width: 500px) {
@@ -206,8 +215,9 @@ const StyledLogosWrapper = styled.div`
   }
 `
 const StyledLogos = styled.div`
-  padding: 0.5rem;
-  box-shadow: rgb(0 0 0 / 10%) 0px 4px 20px;
+  padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+  box-shadow: ${(props) => props.theme.boxShadow};
+  /* box-shadow: rgb(0 0 0 / 10%) 0px 4px 20px; */
   opacity: 1;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
@@ -217,14 +227,19 @@ const StyledLogos = styled.div`
 
   img {
     width: 50px;
-    height: auto;
+    height: 50px;
   }
   p {
-    color: rgba(64, 64, 64, 1);
+    color: ${(props) => props.theme.text};
     margin-top: 0.5rem;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     letter-spacing: 0.5px;
+
+    @media (max-width: 500px) {
+      font-size: 0.8rem;
+      letter-spacing: 0.2px;
+    }
   }
 `
 
@@ -329,7 +344,7 @@ const AboutMe = () => {
 
           <StyledContainer>
             <StyledLeft>
-              <Fade cascade>
+              <Fade cascade triggerOnce>
                 <Article>
                   I&apos;m a front-end developer from the city of Nawabs
                   Lucknow, India.
@@ -354,13 +369,19 @@ const AboutMe = () => {
                   />
                   &nbsp; or eating probably.
                 </Article>
-                <Fade delay={300}>
-                  <H3Left>Experience &amp; Education</H3Left>
+                <Fade delay={300} triggerOnce>
+                  <H3Left
+                    aria-label='Experience and Education'
+                    aria-level='1'
+                    title='Experience and education'
+                  >
+                    Experience &amp; Education
+                  </H3Left>
                 </Fade>
                 <StyledExp>
                   <StyledUl>
                     <StyledLi>
-                      <Fade>
+                      <Fade triggerOnce>
                         <StyledLiContent>
                           <div>Full Stack Developer Intern</div>
                           <p>Cognizant Technology Solutions</p>
@@ -369,7 +390,7 @@ const AboutMe = () => {
                       </Fade>
                     </StyledLi>
                     <StyledLi>
-                      <Fade delay={1150}>
+                      <Fade delay={1150} triggerOnce>
                         <StyledLiContent>
                           <div>Project Intern</div>
                           <p>Phemsoft Software Pvt Ltd</p>
@@ -378,7 +399,7 @@ const AboutMe = () => {
                       </Fade>
                     </StyledLi>
                     <StyledLi>
-                      <Fade delay={1250}>
+                      <Fade delay={1250} triggerOnce>
                         <StyledLiContent>
                           <div>Social Intern</div>
                           <p>Brij Rani Charitable Trust</p>
@@ -387,7 +408,7 @@ const AboutMe = () => {
                       </Fade>
                     </StyledLi>
                     <StyledLi>
-                      <Fade delay={1350}>
+                      <Fade delay={1350} triggerOnce>
                         <StyledLiContent>
                           <div>
                             University Of Petroleum &amp; Energy Studies
@@ -402,9 +423,11 @@ const AboutMe = () => {
               </Fade>
             </StyledLeft>
             <StyledRight>
-              <H3>Skills</H3>
+              <H3 aria-level='1' title='Skills' aria-label='Skills section'>
+                Skills
+              </H3>
               <StyledLogosWrapper>
-                <Fade cascade damping='0.25'>
+                <Fade cascade damping='0.25' triggerOnce>
                   <a
                     href='https://developer.mozilla.org/en-US/docs/Glossary/HTML5'
                     target='_blank'

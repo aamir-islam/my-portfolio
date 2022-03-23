@@ -3,18 +3,26 @@ import styled from 'styled-components/macro'
 import { useNav } from '../../hooks/useNav'
 import { FiGithub, FiExternalLink } from 'react-icons/fi/index.esm'
 import { FeaturedProjectsList } from '../assets/projects'
+import { Fade } from 'react-awesome-reveal'
 
 const StyledProjectsWrapper = styled.section`
   width: 100%;
   box-sizing: border-box;
-  min-height: 92vh;
+  min-height: 100vh;
+  transition: ${(props) => props.theme.themeTransition.transition};
+  background-color: ${(props) => props.theme.body};
 `
 
 const StyledProjects = styled.section`
   width: 80%;
   margin: 0 auto;
   color: #404040;
-
+  .fade {
+    margin: 7rem auto;
+    @media (max-width: 500px) {
+      margin: 3rem auto;
+    }
+  }
   @media (max-width: 787px) {
     /* width: %; */
   }
@@ -25,9 +33,10 @@ const StyledProjects = styled.section`
 const H3 = styled.h3`
   font-size: clamp(40px, 5.5vw, 60px);
   margin-bottom: 2rem;
-  margin-top: 4.5rem;
+  padding-top: 5rem;
   font-family: 'Inter', sans-serif;
   display: flex;
+  color: ${(props) => props.theme.text};
 
   &::after {
     content: '';
@@ -53,6 +62,7 @@ const P = styled.p`
   line-height: 1.2;
   font-size: clamp(18px, 4vw, 22px);
   max-width: 650px;
+  color: ${(props) => props.theme.lightText};
   @media (max-width: 500px) {
     margin-bottom: 2rem;
   }
@@ -65,7 +75,7 @@ const StyledFeaturedProjects = styled.div`
   &:not(:last-child) {
     margin: 7rem auto;
 
-    @media(max-width: 500px) {
+    @media (max-width: 500px) {
       margin: 2rem auto;
     }
   }
@@ -80,17 +90,19 @@ const StyledFeaturedProjects = styled.div`
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
       rgba(17, 17, 26, 0.1) 0px 0px 8px;
     padding: 1rem;
+    
     border-radius: 8px;
     margin-top: 1rem;
   }
 `
 const StyledLeft = styled.div`
   width: 50%;
-  /* border: 1px solid teal; */
+  /* border: 5px solid teal; */
   height: 300px;
   text-align: right;
   /* background: url('images/typing.PNG'); */
   background: url(${(props) => props.url});
+  opacity: ${(props) => props.theme.opacity};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -102,7 +114,11 @@ const StyledLeft = styled.div`
 
   @media (max-width: 500px) {
     width: 100%;
-    height: 280px;
+    /* height: 280px; */
+    background-color: white;
+    /* background-size: ${(props) => props.theme.backgroundSize}; */
+    padding: ${(props) => props.theme.projectCardPaddingInner};
+    border-radius: 8px;
     opacity: 0.4;
   }
 `
@@ -120,6 +136,7 @@ const StyledRight = styled.div`
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
+    color: ${(props) => props.theme.text};
 
     @media (max-width: 500px) {
       text-align: left;
@@ -133,7 +150,8 @@ const StyledRight = styled.div`
     text-align: right;
     font-size: 1.1rem;
     line-height: 1.75rem;
-    color: rgba(64, 64, 64, 1);
+    color: ${(props) => props.theme.lightText};
+    /* color: rgba(64, 64, 64, 1); */
 
     @media (max-width: 500px) {
       text-align: left;
@@ -149,7 +167,10 @@ const StyledRight = styled.div`
     min-height: 60px;
     box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
     max-width: 30rem;
-    background-color: #ffffff;
+    transition: ${(props) => props.theme.themeTransition.transition};
+    background-color: ${(props) => props.theme.projectDesc};
+    /* background-color: #ffffff; */
+    color: ${(props) => props.theme.lightText};
     border-radius: 0.375rem;
     z-index: 2;
 
@@ -161,7 +182,8 @@ const StyledRight = styled.div`
       box-shadow: none;
       background-color: transparent;
       font-weight: 500;
-      color: black;
+      /* color: black; */
+      color: ${(props) => props.theme.lightText};
       text-align: left;
       padding: 1.5rem 0;
     }
@@ -180,6 +202,7 @@ const StyledLanguagesUsed = styled.div`
   font-size: 13px;
   justify-content: space-evenly;
   font-family: 'Roboto Mono', monospace;
+  color: ${(props) => props.theme.lightText};
   span {
     padding-left: 0.4rem;
 
@@ -198,7 +221,8 @@ const StyledLinks = styled.div`
   font-size: 24px;
   text-align: right;
   a {
-    color: #404040;
+    color: ${(props) => props.theme.text};
+    /* color: #404040; */
     &:first-of-type {
       padding-right: 1rem;
     }
@@ -221,37 +245,57 @@ const Projects = () => {
   return (
     <StyledProjectsWrapper>
       <StyledProjects id='projectsContainer' ref={projectsRef}>
-        <H3>Some Things I’ve Built</H3>
+        <H3
+          aria-level='1'
+          title='Some things i have built'
+          aria-label='Display Projects'
+        >
+          Some Things I’ve Built
+        </H3>
         <P>
           Here are some of my most favourite projects that I enjoyed coding and
           designing from scratch.
         </P>
-        {FeaturedProjectsList.map((project) => {
-          return (
-            <StyledFeaturedProjects key={project.id}>
-              <StyledLeft url={project.img}></StyledLeft>
-              <StyledRight>
-                <h2>{project.title}</h2>
-                <h1>{project.subject}</h1>
-                <p>{project.description}</p>
+        <Fade className='fade' cascade delay='1.8' triggerOnce>
+          {FeaturedProjectsList.map((project) => {
+            return (
+              <StyledFeaturedProjects key={project.id}>
+                <StyledLeft url={project.img}></StyledLeft>
+                <StyledRight>
+                  <h2>{project.title}</h2>
+                  <h1>{project.subject}</h1>
+                  <p>{project.description}</p>
 
-                <StyledLanguagesUsed>
-                  {project.languages.map((language) => {
-                    return <span key={language}>{language}</span>
-                  })}
-                </StyledLanguagesUsed>
-                <StyledLinks>
-                  <a href={project.github} target='_blank' rel='noreferrer'>
-                    <FiGithub />
-                  </a>
-                  <a href={project.live} target='_blank' rel='noreferrer'>
-                    <FiExternalLink />
-                  </a>
-                </StyledLinks>
-              </StyledRight>
-            </StyledFeaturedProjects>
-          )
-        })}
+                  <StyledLanguagesUsed>
+                    {project.languages.map((language) => {
+                      return <span key={language}>{language}</span>
+                    })}
+                  </StyledLanguagesUsed>
+                  <StyledLinks>
+                    <a
+                      href={project.github}
+                      target='_blank'
+                      rel='noreferrer'
+                      aria-label='github link'
+                      title='github link'
+                    >
+                      <FiGithub />
+                    </a>
+                    <a
+                      href={project.live}
+                      target='_blank'
+                      rel='noreferrer'
+                      aria-label='live project link'
+                      title='live project link'
+                    >
+                      <FiExternalLink />
+                    </a>
+                  </StyledLinks>
+                </StyledRight>
+              </StyledFeaturedProjects>
+            )
+          })}
+        </Fade>
       </StyledProjects>
     </StyledProjectsWrapper>
   )

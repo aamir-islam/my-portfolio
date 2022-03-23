@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { FiFolder } from 'react-icons/fi/index.esm'
 import { FiGithub, FiExternalLink } from 'react-icons/fi/index.esm'
 import { OtherProjects } from '../assets/projects'
+import { Fade } from 'react-awesome-reveal'
 
 const StyledMoreProjectsWrapper = styled.section`
   /* border: 1px solid teal; */
@@ -16,6 +17,7 @@ const StyledMoreProjects = styled.section`
   width: 80%;
   min-height: 100vh;
   margin: 0 auto;
+  margin-bottom: 5rem;
   color: #404040;
   max-width: 1000px;
 
@@ -116,50 +118,113 @@ const StyledCard = styled.div`
     }
   }
 `
+const Button = styled.button`
+  background: #404040;
+  display: block;
+  color: #fff;
+  padding: 1.25rem 1.75rem;
+  margin: 5rem auto 2rem auto;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Roboto Mono', monospace;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);;
+  background: #2f2f2f;
+  &:hover {
+    background: black;
+  }
+`
 
 const MoreProjects = () => {
+  const [visible, setVisible] = useState(3)
+  const [damping, setDamping] = useState(0.2)
+
+  const showMoreProjects = () => {
+    setDamping(0.08)
+    if (visible < OtherProjects.length) setVisible((prevValue) => prevValue + 3)
+    else setVisible(3)
+  }
+
+  const OtherProjectsWrapper = () => {
+    return (
+      <>
+        <StyledCardContainer>
+          <Fade cascade damping={damping} triggerOnce>
+            {OtherProjects.slice(0, visible).map((project, index) => {
+              return (
+                <StyledCard key={index}>
+                  <div className='header'>
+                    <FiFolder />
+                    <div>
+                      <a
+                        aria-label='Github link'
+                        href={project.github}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        title='Github link'
+                      >
+                        <FiGithub />
+                      </a>
+                      <a
+                        href={project.live}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        title='Live link'
+                        aria-label='Live link'
+                      >
+                        <FiExternalLink />
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    className='project-title'
+                    aria-label='project-title'
+                    title='title'
+                    role='article'
+                  >
+                    {project.title}
+                  </div>
+                  <p
+                    className='project-description'
+                    aria-label='project-description'
+                    title='description'
+                    role='article'
+                  >
+                    {project.description}
+                  </p>
+                  <div
+                    className='languages'
+                    aria-label='project languages'
+                    title='languages used'
+                  >
+                    {project.languages.map((language, index) => {
+                      return (
+                        <span key={index} title={language}>
+                          {language}
+                        </span>
+                      )
+                    })}
+                  </div>
+                </StyledCard>
+              )
+            })}
+          </Fade>
+        </StyledCardContainer>
+      </>
+    )
+  }
   return (
     <StyledMoreProjectsWrapper>
       <StyledMoreProjects>
-        <H3>Other Projects</H3>
-        <StyledCardContainer>
-          {OtherProjects.map((project, index) => {
-            return (
-              <StyledCard key={index}>
-                <div className='header'>
-                  <FiFolder />
-                  <div>
-                    <a
-                      aria-label='Github link'
-                      href={project.github}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      title='Github link'
-                    >
-                      <FiGithub />
-                    </a>
-                    <a
-                      href={project.live}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      title='Live link'
-                      aria-label='Live link'
-                    >
-                      <FiExternalLink />
-                    </a>
-                  </div>
-                </div>
-                <div className='project-title'>{project.title}</div>
-                <p className='project-description'>{project.description}</p>
-                <div className='languages'>
-                  {project.languages.map((language, index) => {
-                    return <span key={index}>{language}</span>
-                  })}
-                </div>
-              </StyledCard>
-            )
-          })}
-        </StyledCardContainer>
+        <H3 aria-level='1' title='more projects' aria-label='Other Projects'>
+          Other Projects
+        </H3>
+        {OtherProjectsWrapper()}
+
+        <Button onClick={showMoreProjects}>
+          Show {visible === 12 ? 'Less' : 'More'}
+        </Button>
       </StyledMoreProjects>
     </StyledMoreProjectsWrapper>
   )
