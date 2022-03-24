@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { useNav } from '../hooks/useNav'
 import Particle from './Particles'
 import { Fade } from 'react-awesome-reveal'
@@ -17,7 +17,7 @@ const StyledWrapper = styled.section`
 const StyledLandingPage = styled.section`
   color: ${(props) => props.theme.landingPage.text};
   transition: color 0.5s linear;
-  min-height: 101vh;
+  min-height: 90vh;
   width: 80%;
   /* border: 1px solid red; */
   display: flex;
@@ -30,6 +30,7 @@ const StyledLandingPage = styled.section`
   }
   @media (max-width: 500px) {
     width: 100%;
+    min-height: 96vh;
     margin-top: -2rem;
     flex-direction: column;
   }

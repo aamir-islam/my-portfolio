@@ -8,10 +8,11 @@ const Main = ({ theme, isOpen }) => {
   return (
     <div
       style={{
-        filter: isOpen ? 'blur(2px) brightness(0.9)' : 'blur(0px)',
         boxSizing: 'border-box',
+        filter: isOpen ? 'blur(1px) brightness(0.6)' : 'blur(0px)',
         backgroundColor: theme === 'lightTheme' ? '#171A23' : '#FFFFFF',
         transition: 'background-color 0.5s linear',
+        transform: ' scale(1.01)',
       }}
     >
       <LandingPage theme={theme} />
