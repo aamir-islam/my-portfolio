@@ -17,7 +17,8 @@ const StyledMoreProjects = styled.section`
   width: 80%;
   min-height: 100vh;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  /* margin-bottom: 5rem; */
+  padding-bottom: 5rem;
   color: #404040;
   max-width: 1000px;
 
@@ -34,6 +35,7 @@ const H3 = styled.h3`
   text-align: center;
   margin: 7rem 0;
   font-family: 'Inter', sans-serif;
+  color: ${(props) => props.theme.text};
 
   @media (max-width: 500px) {
     margin: 5rem 0;
@@ -45,6 +47,7 @@ const StyledCardContainer = styled.div`
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 18px;
+  color: ${(props) => props.theme.text};
   /* justify-items: center; */
 `
 
@@ -54,6 +57,10 @@ const StyledCard = styled.div`
     transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   padding: 1.5rem 1rem;
   border-radius: 5px;
+  transition: ${(props) => props.theme.themeTransition.transition};
+  background-color: ${(props) => props.theme.moreProjectsCardBackgroundColor};
+  /* background-color:#1f232f; */
+  background-color:#2e3447;
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
@@ -89,6 +96,11 @@ const StyledCard = styled.div`
       }
     }
   }
+  .media-links {
+    svg {
+      color: ${(props) => props.theme.lightText};
+    }
+  }
 
   .project-title {
     font-size: 1.4rem;
@@ -100,28 +112,31 @@ const StyledCard = styled.div`
   }
 
   .project-description {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
+    letter-spacing: 0.6px;
     line-height: 1.3rem;
     margin-top: 1.2rem;
+    color: ${(props) => props.theme.lightText};
   }
   .languages {
     display: flex;
     margin-top: 1.2rem;
-    font-size: 13px;
     float: left;
     justify-content: space-evenly;
     font-family: 'Roboto Mono', monospace;
+    color: ${(props) => props.theme.lightText};
+    /* font-weight:900; */
     span {
-      font-size: 12.5px;
+      font-size: 13px;
       padding-right: 0.6rem;
     }
   }
 `
 const Button = styled.button`
-  background: #404040;
+  /* background: #404040; */
   display: block;
-  color: #fff;
+  color: ${(props) => props.theme.body};
   padding: 1.25rem 1.75rem;
   margin: 5rem auto 2rem auto;
   cursor: pointer;
@@ -129,10 +144,12 @@ const Button = styled.button`
   font-family: 'Roboto Mono', monospace;
   border: none;
   border-radius: 4px;
-  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);;
-  background: #2f2f2f;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* background: #2f2f2f; */
+  background-color: ${(props) => props.theme.buttonColor};
   &:hover {
-    background: black;
+    filter: brightness(1.2);
+    /* background: black; */
   }
 `
 
@@ -158,6 +175,7 @@ const MoreProjects = () => {
                     <FiFolder />
                     <div>
                       <a
+                        className='media-links'
                         aria-label='Github link'
                         href={project.github}
                         target='_blank'
@@ -167,6 +185,7 @@ const MoreProjects = () => {
                         <FiGithub />
                       </a>
                       <a
+                        className='media-links'
                         href={project.live}
                         target='_blank'
                         rel='noopener noreferrer'

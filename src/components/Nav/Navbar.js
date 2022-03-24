@@ -15,7 +15,7 @@ const StyledNavbar = styled.nav`
   background-color: ${(props) => props.theme.navbar.body};
   width: 100%;
   position: sticky;
-  z-index: 10;
+  z-index: 10000;
   top: 0;
   padding: 1.2em 0;
   color: ${(props) => props.theme.navbar.text};

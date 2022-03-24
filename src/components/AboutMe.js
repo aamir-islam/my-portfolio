@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { useNav } from '../hooks/useNav'
 import { Fade } from 'react-awesome-reveal'
-import Particles from 'react-tsparticles'
+// import Particles from 'react-tsparticles'
 const StyledAboutMeWrapper = styled.section`
   transition: ${(props) => props.theme.themeTransition.transition};
   background-color: ${(props) => props.theme.body};
@@ -246,100 +246,10 @@ const StyledLogos = styled.div`
 const AboutMe = () => {
   const aboutRef = useNav('About')
 
-  const particlesInit = (main) => {
-    // console.log(main)
-  }
-  const particlesLoaded = (container) => {
-    // console.log(container)
-  }
   return (
     <StyledAboutMeWrapper>
       <StyledAboutMe id='aboutContainer' ref={aboutRef}>
         <div style={{ position: 'relative' }}>
-          <Particles
-            id='tsparticles'
-            init={particlesInit}
-            loaded={particlesLoaded}
-            width='93vw'
-            style={{
-              position: 'absolute',
-              marginLeft: '-8rem',
-            }}
-            options={{
-              fpsLimit: 60,
-              fullScreen: { enable: false, zIndex: 330 },
-              interactivity: {
-                events: {
-                  onClick: {
-                    enable: true,
-                    mode: 'push',
-                  },
-                  onHover: {
-                    enable: true,
-                    mode: 'repulse',
-                  },
-                  resize: true,
-                },
-                modes: {
-                  bubble: {
-                    distance: 400,
-                    duration: 2,
-                    opacity: 0.8,
-                    size: 20,
-                  },
-                  push: {
-                    quantity: 4,
-                  },
-                  repulse: {
-                    distance: 200,
-                    duration: 0.4,
-                  },
-                },
-              },
-              particles: {
-                color: {
-                  value: '#7a7a7a',
-                },
-                links: {
-                  color: '#ababab',
-                  distance: 150,
-                  enable: true,
-                  opacity: 0.3,
-                  width: 1,
-                },
-                collisions: {
-                  enable: true,
-                },
-                move: {
-                  direction: 'none',
-                  enable: true,
-                  outMode: 'bounce',
-                  random: false,
-                  speed: 2,
-                  straight: false,
-                },
-                number: {
-                  density: {
-                    enable: true,
-                    area: 1080,
-                  },
-                  value: 50,
-                },
-                opacity: {
-                  value: 0.5,
-                },
-                shape: {
-                  type: 'circle',
-                },
-                size: {
-                  random: true,
-                  value: 3,
-                },
-              },
-              detectRetina: true,
-            }}
-          />
-
           <H1>About Me</H1>
 
           <StyledContainer>
