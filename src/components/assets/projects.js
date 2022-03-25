@@ -62,67 +62,12 @@ export const OtherProjects = [
     live: 'https://hyperstream.vercel.app/',
     github: 'https://github.com/Aryaman2803/React-Chat-App',
   },
+]
+
+export const BlogsList = [
   {
-    id: 4,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
-  },
-  {
-    id: 5,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
-  },
-  {
-    id: 6,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
-  },
-  {
-    id: 7,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
-  },
-  {
-    id: 8,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
-  },
-  {
-    id: 9,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
-  },
-  {
-    id: 10,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
+    id: 1,
+    title: 'Building a sort by list feature in React with Styled Component',
+    link: 'https://aryamansingh.hashnode.dev/building-a-sort-by-list-feature-in-react-with-styled-component#comments-list',
   },
 ]

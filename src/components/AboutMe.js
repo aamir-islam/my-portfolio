@@ -256,8 +256,7 @@ const AboutMe = () => {
             <StyledLeft>
               <Fade cascade triggerOnce>
                 <Article>
-                  I&apos;m a front-end developer from the city of Nawabs
-                  Lucknow, India.
+                  I&apos;m a front-end developer from Lucknow, India.
                   <br />I enjoy turning complex problems into simple, beautiful
                   and intuitive designs. When I'm not pushing pixels, you'll
                   find me scrolling twitter checking out <em>#ReactJS posts</em>

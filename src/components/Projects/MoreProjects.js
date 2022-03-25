@@ -9,13 +9,12 @@ const StyledMoreProjectsWrapper = styled.section`
   /* border: 1px solid teal; */
   width: 100%;
   box-sizing: border-box;
-  box-sizing: border-box;
 `
 
 const StyledMoreProjects = styled.section`
   /* border: 1px solid red; */
   width: 80%;
-  min-height: 100vh;
+  min-height: 50vh;
   margin: 0 auto;
   /* margin-bottom: 5rem; */
   padding-bottom: 5rem;
@@ -52,9 +51,9 @@ const StyledCardContainer = styled.div`
 `
 
 const StyledCard = styled.div`
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+  /* transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
     opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
-    transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s; */
   padding: 1.5rem 1rem;
   border-radius: 5px;
   transition: ${(props) => props.theme.themeTransition.transition};
@@ -138,7 +137,7 @@ const Button = styled.button`
   font-family: 'Roboto Mono', monospace;
   border: none;
   border-radius: 4px;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: ${(props) => props.theme.themeTransition.transition};
   /* background: #2f2f2f; */
   background-color: ${(props) => props.theme.buttonColor};
   &:hover {
