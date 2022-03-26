@@ -56,11 +56,11 @@ const StyledCard = styled.div`
     transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s; */
   padding: 1.5rem 1rem;
   border-radius: 5px;
-  transition: ${(props) => props.theme.themeTransition.transition};
   background-color: ${(props) => props.theme.moreProjectsCardBackgroundColor};
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition: ${(props) => props.theme.themeTransition.transition};
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 12px;
   height: 230px;
+  transition: background-color 0.5s linear, transform 0.2s linear;
   &:hover {
     transform: translateY(-7px);
   }

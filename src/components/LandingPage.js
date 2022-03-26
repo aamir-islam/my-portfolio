@@ -11,7 +11,6 @@ const StyledWrapper = styled.section`
   transition: background-image 0.5s linear;
   background-repeat: no-repeat;
   background-size: cover;
-  
 `
 
 const StyledLandingPage = styled.section`
@@ -113,7 +112,6 @@ const LandingPage = ({ theme }) => {
         <Particle />
         <StyledLandingPage>
           <StyledLeft>
-           
             <Fade cascade damping='0.6' triggerOnce>
               <StyledH4
                 aria-label='hi my name is'

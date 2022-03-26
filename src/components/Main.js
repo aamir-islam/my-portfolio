@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutMe from './AboutMe'
 import Blogs from './Blogs'
+import Contact from './Contact'
 import LandingPage from './LandingPage'
 import MoreProjects from './Projects/MoreProjects'
 import Projects from './Projects/Projects'
@@ -21,6 +22,7 @@ const Main = ({ theme, isOpen }) => {
       <Projects />
       <MoreProjects />
       <Blogs theme={theme} />
+      <Contact />
     </div>
   )
 }

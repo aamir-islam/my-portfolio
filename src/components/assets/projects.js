@@ -67,7 +67,7 @@ export const OtherProjects = [
 export const BlogsList = [
   {
     id: 1,
-    title: 'Building a sort by list feature in React with Styled Component',
-    link: 'https://aryamansingh.hashnode.dev/building-a-sort-by-list-feature-in-react-with-styled-component#comments-list',
+    title: 'Building a list filter in React with Styled Component',
+    link: 'https://aryamansingh.hashnode.dev/building-a-sort-by-list-feature-in-react-with-styled-component',
   },
 ]
