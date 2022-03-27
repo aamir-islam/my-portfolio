@@ -75,4 +75,4 @@ if (process.env.NODE_ENV === 'production') {
 //   }
 // })
 
-app.listen(5000, console.log(`Server lisining to port ${PORT}`))
+app.listen(PORT, console.log(`Server lisining to port ${PORT}`))
