@@ -259,7 +259,7 @@ const AboutMe = () => {
                   find me scrolling twitter checking out <em>#ReactJS posts</em>
                   , playing with my dogs Snowy &nbsp;
                   <img
-                    src='images/snowy.PNG'
+                    src='images/snowy.png'
                     height='20px'
                     width='auto'
                     alt='snowy - Dog'
@@ -267,7 +267,7 @@ const AboutMe = () => {
                   />
                   &nbsp; &amp; Simba&nbsp;
                   <img
-                    src='images/simba.PNG'
+                    src='images/simba.png'
                     height='20px'
                     width='auto'
                     alt='Simba - Dog'
