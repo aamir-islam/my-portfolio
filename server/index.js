@@ -33,7 +33,7 @@ const contactEmail = nodemailer.createTransport({
 
 app.post('/contact', (req, res) => {
   const { name, email, message } = req.body
-  console.log(name, email, message)
+  // console.log(name, email, message)
   const mailOptions = {
     from: name,
     to: process.env.EMAIL,
