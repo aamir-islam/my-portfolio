@@ -24,7 +24,7 @@ const Main = ({ theme, isOpen }) => {
         transform: isOpen ? 'scale(1.005)' : 'scale(1)',
       }}
     >
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div> </div>}>
         <LandingPage theme={theme} />
         <AboutMe theme={theme} />
         <Projects theme={theme} />
