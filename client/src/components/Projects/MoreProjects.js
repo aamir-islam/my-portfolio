@@ -94,6 +94,7 @@ const StyledCard = styled.div`
   .project-description {
     font-size: 16px;
     font-weight: 400;
+    min-height: 90px;
     letter-spacing: 0.6px;
     line-height: 1.3rem;
     margin-top: 1.2rem;
@@ -245,7 +246,7 @@ const MoreProjects = ({ theme }) => {
         {OtherProjectsWrapper()}
 
         <Button onClick={showMoreProjects}>
-          Show {visible === 12 ? 'Less' : 'More'}
+          Show {visible === 21 ? 'Less' : 'More'}
         </Button>
       </StyledMoreProjects>
     </StyledMoreProjectsWrapper>

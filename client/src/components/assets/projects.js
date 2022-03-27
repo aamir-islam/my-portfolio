@@ -62,6 +62,154 @@ export const OtherProjects = [
     live: 'https://hyperstream.vercel.app/',
     github: 'https://github.com/Aryaman2803/React-Chat-App',
   },
+  {
+    id: 4,
+    title: 'Memory Game',
+    description:
+      'A memory game where users can play with cards and try to find the matching pairs.',
+    languages: ['JavaScript', 'CSS'],
+    live: 'https://memory-gaming.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Memory-Game',
+  },
+  {
+    id: 5,
+    title: 'Event-KeyCodes',
+    description:
+      'A web app to display the key code of the letter while typing.',
+    languages: ['JavaScript', 'CSS'],
+    live: 'https://eventkeycode.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Event-KeyCodes',
+  },
+  {
+    id: 6,
+    title: 'Meditation App',
+    description:
+      'A meditation/ambient sounds app that a user can enjoy by picking the amount of time to listen to and choose different ambient sounds.',
+    languages: ['JavaScript', 'CSS'],
+    live: 'https://meditator.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Meditation-App_Js',
+  },
+  {
+    id: 7,
+    title: 'Get Emojis',
+    description: 'A web app to get emojis from the internet.',
+    languages: ['React', 'CSS'],
+    live: 'https://react-emoji.netlify.app/',
+    github: 'https://github.com/Aryaman2803/React-Emoji-Project',
+  },
+  {
+    id: 8,
+    title: 'Movie App',
+    description:
+      'The app will be able to search for movies via the MovieDB API and render the results to the user.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://movifind.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Movie-App',
+  },
+  {
+    id: 9,
+    title: 'Todo List',
+    description:
+      'A todo list app that allows users to add, edit, and delete tasks.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://frontend-mentor-todolist.netlify.app/',
+    github:
+      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/todo-app-main',
+  },
+  {
+    id: 10,
+    title: 'Sound Board',
+    description: 'A sound board app that allows users to play sounds.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://soundsboard.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Sound-Board',
+  },
+  {
+    id: 11,
+    title: 'Split Landing Page',
+    description: 'A PS Box and Xbox split landing page.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://pagelandingsplit.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Split-Landing-Page',
+  },
+  {
+    id: 12,
+    title: 'Fylo Landing Page',
+    description: 'Frontend mentor fylo dark theme landing page challenge.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://fylo-landing-pge.netlify.app/',
+    github:
+      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/fylo-dark-theme-landing-page-master',
+  },
+  {
+    id: 13,
+    title: 'Order Summary Card',
+    description: 'Frontend mentor Order Summary Card challenge.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://frontend-mentor-order-summary.netlify.app/',
+    github:
+      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/order-summary-component-main',
+  },
+  {
+    id: 14,
+    title: 'Theme Clock',
+    description: 'A beautiful analog clock with dark toggle mode.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://themeclock.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Theme-Clock',
+  },
+  {
+    id: 15,
+    title: 'Drink Water',
+    description: 'Keep a record of drinking water.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://drinkwaterrecord.netlify.app/',
+    github: 'hhttps://github.com/Aryaman2803/Drink-Water',
+  },
+  {
+    id: 16,
+    title: 'Dad Jokes',
+    description: 'A dad jokes app that allows users to get a random joke.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://dadjokess.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Dad-Jokes',
+  },
+  {
+    id: 17,
+    title: 'Filter Search Bar',
+    description:
+      'A filter search bar that allows users to search for a specific item.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://filter-user.netlify.app/',
+    github:
+      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/Live-user-filter',
+  },
+  {
+    id: 18,
+    title: 'Time Tracking Dashboard',
+    description: 'Frontend mentor time tracking dashboard challenge.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://frontend-mentor-time-tracking-dashboard.netlify.app/',
+    github:
+      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/time-tracking-dashboard-main',
+  },
+  {
+    id: 19,
+    title: 'Tip Calculator',
+    description: 'A tip calculator that allows users to calculate the tip.',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://frontend-mentor-moneysplit.netlify.app/',
+    github:
+      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/tip-calculator-app-main',
+  },
+  {
+    id: 20,
+    title: 'Wave Form Animation',
+    description: 'Wave effect on the input labels',
+    languages: ['HTML', 'CSS', 'JavaScript'],
+    live: 'https://labelwaveanimatio.netlify.app/',
+    github: 'https://github.com/Aryaman2803/Wave-Form-Animation',
+  },
 ]
 
 export const BlogsList = [

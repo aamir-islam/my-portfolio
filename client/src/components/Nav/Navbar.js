@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import NavLink from './NavLink'
 import { navLinks } from './navLinks'
-import { motion } from 'framer-motion'
+import { m, domAnimation, LazyMotion } from 'framer-motion'
 import MoonSvg from '../assets/MoonSvg'
 import SunSvg from '../assets/SunSvg'
 
@@ -186,7 +186,6 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           tabIndex='0s'
           aria-label='linkedin icon'
         >
-          {/* <ImLinkedin2 /> */}
           <img
             src={
               window.innerWidth < 768
@@ -198,15 +197,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
             alt='linkedin'
             aria-label='linkedin icon'
           />
-          {/* <img
-            src={
-              theme === 'darkTheme'
-                ? 'images/linkedinDark.png'
-                : 'images/linkedinLight.png'
-            }
-            alt='linkedin'
-            aria-label='linkedin icon'
-          /> */}
+          
         </StyledA>
         <StyledA
           href='https://github.com/Aryaman2803'
@@ -267,20 +258,24 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
       <StyledMobileMenu>
         {navLinks.map(({ navLinkId, scrollToId }, idx) => {
           return (
-            <motion.div animate={{ x: [200, 0] }} key={idx}>
-              <StyledMobileLink onClick={() => setIsOpen(!isOpen)}>
-                <NavLink
-                  key={idx}
-                  navLinkId={navLinkId}
-                  scrollToId={scrollToId}
-                />
-              </StyledMobileLink>
-            </motion.div>
+            <LazyMotion key={idx} features={domAnimation}>
+              <m.div animate={{ x: [200, 0] }}>
+                <StyledMobileLink onClick={() => setIsOpen(!isOpen)}>
+                  <NavLink
+                    key={idx}
+                    navLinkId={navLinkId}
+                    scrollToId={scrollToId}
+                  />
+                </StyledMobileLink>
+              </m.div>
+            </LazyMotion>
           )
         })}
-        <motion.div animate={{ x: [200, 0] }}>
-          <SocialMediaWrapper>{SocialMediaIcons()}</SocialMediaWrapper>
-        </motion.div>
+        <LazyMotion features={domAnimation}>
+          <m.div animate={{ x: [200, 0] }}>
+            <SocialMediaWrapper>{SocialMediaIcons()}</SocialMediaWrapper>
+          </m.div>
+        </LazyMotion>
       </StyledMobileMenu>
     )
   }
@@ -329,41 +324,45 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           {themeSwitch()}
 
           {isOpen ? (
-            <motion.div
-              animate={{ rotate: 360, x: ['25px', '0px'] }}
-              transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
-            >
-              <img
-              src={
-                theme === 'darkTheme'
-                  ? 'images/closeDark.png'
-                  : 'images/closeLight.png'
-              }
-                height='24px'
-                width='24px'
-                alt='close icon'
-                aria-label='close icon'
-                onClick={() => setIsOpen(false)}
-              />
-            </motion.div>
+            <LazyMotion features={domAnimation}>
+              <m.div
+                animate={{ rotate: 360, x: ['25px', '0px'] }}
+                transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
+              >
+                <img
+                  src={
+                    theme === 'darkTheme'
+                      ? 'images/closeDark.png'
+                      : 'images/closeLight.png'
+                  }
+                  height='24px'
+                  width='24px'
+                  alt='close icon'
+                  aria-label='close icon'
+                  onClick={() => setIsOpen(false)}
+                />
+              </m.div>
+            </LazyMotion>
           ) : (
-            <motion.div
-              animate={{ x: ['25px', '0px'] }}
-              transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
-            >
-              <img
-                src={
-                  theme === 'darkTheme'
-                    ? 'images/hamburgerDark.png'
-                    : 'images/hamburgerLight.png'
-                }
-                alt='menu icon'
-                aria-label='menu icon'
-                height='22px'
-                width='22px'
-                onClick={() => setIsOpen(true)}
-              />
-            </motion.div>
+            <LazyMotion features={domAnimation}>
+              <m.div
+                animate={{ x: ['25px', '0px'] }}
+                transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
+              >
+                <img
+                  src={
+                    theme === 'darkTheme'
+                      ? 'images/hamburgerDark.png'
+                      : 'images/hamburgerLight.png'
+                  }
+                  alt='menu icon'
+                  aria-label='menu icon'
+                  height='22px'
+                  width='22px'
+                  onClick={() => setIsOpen(true)}
+                />
+              </m.div>
+            </LazyMotion>
           )}
         </span>
       </HamburgerBtn>
