@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { useNav } from '../../hooks/useNav'
-import { FiGithub, FiExternalLink } from 'react-icons/fi/index.esm'
 import { FeaturedProjectsList } from '../assets/projects'
 import { Fade } from 'react-awesome-reveal'
 
@@ -223,17 +222,18 @@ const StyledLinks = styled.div`
   font-size: 24px;
   text-align: right;
   a {
-    color: ${(props) => props.theme.text};
+    /* color: ${(props) => props.theme.text}; */
     /* color: #404040; */
-    &:first-of-type {
-      padding-right: 1rem;
-    }
-
-    &:hover {
-      svg {
+    img {
+      height: 28px;
+      width: 28px;
+      &:hover {
         transition: all 0.1s ease-in-out;
         transform: translateY(-3px) translateZ(0px);
       }
+    }
+    &:first-of-type {
+      padding-right: 1rem;
     }
   }
   @media (max-width: 500px) {
@@ -242,7 +242,7 @@ const StyledLinks = styled.div`
   }
 `
 
-const Projects = () => {
+const Projects = ({ theme }) => {
   const projectsRef = useNav('Projects')
   return (
     <StyledProjectsWrapper>
@@ -281,7 +281,15 @@ const Projects = () => {
                       aria-label='github link'
                       title='github link'
                     >
-                      <FiGithub />
+                      <img
+                        src={
+                          theme === 'darkTheme'
+                            ? 'images/githubDark.png'
+                            : 'images/githubLight.png'
+                        }
+                        alt='Github link'
+                        aria-label='github link'
+                      />
                     </a>
                     <a
                       href={project.live}
@@ -290,7 +298,15 @@ const Projects = () => {
                       aria-label='live project link'
                       title='live project link'
                     >
-                      <FiExternalLink />
+                      <img
+                        src={
+                          theme === 'darkTheme'
+                            ? 'images/externalLinkDark.png'
+                            : 'images/externalLinkLight.png'
+                        }
+                        alt='Github link'
+                        aria-label='github link'
+                      />
                     </a>
                   </StyledLinks>
                 </StyledRight>

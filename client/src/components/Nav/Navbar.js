@@ -2,11 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import NavLink from './NavLink'
 import { navLinks } from './navLinks'
-import { HiOutlineMenu } from 'react-icons/hi/index.esm'
-import { FiTwitter, FiGithub, FiMail } from 'react-icons/fi/index.esm'
-import { ImLinkedin2 } from 'react-icons/im/index.esm'
-import { VscClose } from 'react-icons/vsc/index.esm'
-
 import { motion } from 'framer-motion'
 import MoonSvg from '../assets/MoonSvg'
 import SunSvg from '../assets/SunSvg'
@@ -63,13 +58,14 @@ const StyledIcons = styled.span`
   }
 `
 const StyledA = styled.a`
-  color: ${(props) => props.theme.navbar.text};
-  &:first-of-type {
-    opacity: 0.86;
-  }
-  &:hover {
-    transform: scale(1.1);
-    transition: all 0.2s ease-in-out;
+  /* color: ${(props) => props.theme.navbar.text}; */
+  img {
+    height: 24px;
+    width: 24px;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.2s ease-in-out;
+    }
   }
 `
 
@@ -190,7 +186,27 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           tabIndex='0s'
           aria-label='linkedin icon'
         >
-          <ImLinkedin2 />
+          {/* <ImLinkedin2 /> */}
+          <img
+            src={
+              window.innerWidth < 768
+                ? 'images/linkedinDark.png'
+                : theme === 'darkTheme'
+                ? 'images/linkedinDark.png'
+                : 'images/linkedinLight.png'
+            }
+            alt='linkedin'
+            aria-label='linkedin icon'
+          />
+          {/* <img
+            src={
+              theme === 'darkTheme'
+                ? 'images/linkedinDark.png'
+                : 'images/linkedinLight.png'
+            }
+            alt='linkedin'
+            aria-label='linkedin icon'
+          /> */}
         </StyledA>
         <StyledA
           href='https://github.com/Aryaman2803'
@@ -200,13 +216,47 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           tabIndex='0s'
           aria-label='github icon'
         >
-          <FiGithub />
+          <img
+            src={
+              window.innerWidth < 768
+                ? 'images/githubDark.png'
+                : theme === 'darkTheme'
+                ? 'images/githubDark.png'
+                : 'images/githubLight.png'
+            }
+            alt='github'
+            aria-label='github icon'
+          />
         </StyledA>
         <i tabIndex='0s' title='Twitter'>
-          <FiTwitter />
+          <img
+            src={
+              window.innerWidth < 768
+                ? 'images/twitterDark.png'
+                : theme === 'darkTheme'
+                ? 'images/twitterDark.png'
+                : 'images/twitterLight.png'
+            }
+            alt='twitter'
+            aria-label='twitter icon'
+            height='24px'
+            width='24px'
+          />
         </i>
         <i title='Email' tabIndex='0s'>
-          <FiMail />
+          <img
+            src={
+              window.innerWidth < 768
+                ? 'images/emailDark.png'
+                : theme === 'darkTheme'
+                ? 'images/emailDark.png'
+                : 'images/emailLight.png'
+            }
+            alt='twitter'
+            aria-label='twitter icon'
+            height='24px'
+            width='24px'
+          />
         </i>
       </>
     )
@@ -283,11 +333,17 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
               animate={{ rotate: 360, x: ['25px', '0px'] }}
               transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
             >
-              <VscClose
-                size={'32px'}
+              <img
+              src={
+                theme === 'darkTheme'
+                  ? 'images/closeDark.png'
+                  : 'images/closeLight.png'
+              }
+                height='24px'
+                width='24px'
+                alt='close icon'
+                aria-label='close icon'
                 onClick={() => setIsOpen(false)}
-                title='close'
-                role='button'
               />
             </motion.div>
           ) : (
@@ -295,7 +351,18 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
               animate={{ x: ['25px', '0px'] }}
               transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
             >
-              <HiOutlineMenu onClick={() => setIsOpen(true)} />
+              <img
+                src={
+                  theme === 'darkTheme'
+                    ? 'images/hamburgerDark.png'
+                    : 'images/hamburgerLight.png'
+                }
+                alt='menu icon'
+                aria-label='menu icon'
+                height='22px'
+                width='22px'
+                onClick={() => setIsOpen(true)}
+              />
             </motion.div>
           )}
         </span>

@@ -1,10 +1,17 @@
-import React from 'react'
-import AboutMe from './AboutMe'
-import Blogs from './Blogs'
-import Contact from './Contact'
-import LandingPage from './LandingPage'
-import MoreProjects from './Projects/MoreProjects'
-import Projects from './Projects/Projects'
+import React, { Suspense } from 'react'
+// import AboutMe from './AboutMe'
+// import Blogs from './Blogs'
+// import Contact from './Contact'
+// import LandingPage from './LandingPage'
+// import MoreProjects from './Projects/MoreProjects'
+// import Projects from './Projects/Projects'
+
+const LandingPage = React.lazy(() => import('.//LandingPage'))
+const Projects = React.lazy(() => import('./Projects/Projects'))
+const MoreProjects = React.lazy(() => import('./Projects/MoreProjects'))
+const Contact = React.lazy(() => import('./Contact'))
+const Blogs = React.lazy(() => import('./Blogs'))
+const AboutMe = React.lazy(() => import('./AboutMe'))
 
 const Main = ({ theme, isOpen }) => {
   return (
@@ -17,12 +24,14 @@ const Main = ({ theme, isOpen }) => {
         transform: isOpen ? 'scale(1.005)' : 'scale(1)',
       }}
     >
-      <LandingPage theme={theme} />
-      <AboutMe theme={theme} />
-      <Projects />
-      <MoreProjects />
-      <Blogs theme={theme} />
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LandingPage theme={theme} />
+        <AboutMe theme={theme} />
+        <Projects theme={theme} />
+        <MoreProjects theme={theme} />
+        <Blogs theme={theme} />
+        <Contact />
+      </Suspense>
     </div>
   )
 }

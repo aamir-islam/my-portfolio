@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import { FiFolder } from 'react-icons/fi/index.esm'
-import { FiGithub, FiExternalLink } from 'react-icons/fi/index.esm'
 import { OtherProjects } from '../assets/projects'
 import { Fade } from 'react-awesome-reveal'
 
@@ -41,19 +39,14 @@ const H3 = styled.h3`
   }
 `
 const StyledCardContainer = styled.div`
-  /* border: 2px solid black; */
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 18px;
   color: ${(props) => props.theme.text};
-  /* justify-items: center; */
 `
 
 const StyledCard = styled.div`
-  /* transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
-    opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
-    transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s; */
   padding: 1.5rem 1rem;
   border-radius: 5px;
   background-color: ${(props) => props.theme.moreProjectsCardBackgroundColor};
@@ -65,33 +58,27 @@ const StyledCard = styled.div`
     transform: translateY(-7px);
   }
 
-  @media (max-width: 1180px) {
-    /* height: 350px;
-    width: 350px; */
-  }
-
   .header {
     font-size: 40px;
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid red; */
     margin-bottom: 0.8rem;
+    img {
+      opacity: 0.9;
+      height: 42px;
+      width: 42px;
+    }
     a {
-      color: #404040;
-      font-size: 24px;
       padding-left: 15px;
 
-      &:hover {
-        svg {
+      img {
+        height: 28px;
+        width: 28px;
+        &:hover {
           transition: all 0.1s ease-in-out;
           transform: translateY(-3px) translateZ(0px);
         }
       }
-    }
-  }
-  .media-links {
-    svg {
-      color: ${(props) => props.theme.lightText};
     }
   }
 
@@ -146,7 +133,7 @@ const Button = styled.button`
   }
 `
 
-const MoreProjects = () => {
+const MoreProjects = ({ theme }) => {
   const [visible, setVisible] = useState(3)
   const [damping, setDamping] = useState(0.2)
 
@@ -165,27 +152,50 @@ const MoreProjects = () => {
               return (
                 <StyledCard key={index}>
                   <div className='header'>
-                    <FiFolder />
+                    <img
+                      src={
+                        theme === 'darkTheme'
+                          ? 'images/folderDark.png'
+                          : 'images/folderLight.png'
+                      }
+                      alt='Github link'
+                      aria-label='github link'
+                    />
+                    {/* <FiFolder /> */}
                     <div>
                       <a
-                        className='media-links'
                         aria-label='Github link'
                         href={project.github}
                         target='_blank'
                         rel='noopener noreferrer'
                         title='Github link'
                       >
-                        <FiGithub />
+                        <img
+                          src={
+                            theme === 'darkTheme'
+                              ? 'images/githubDark.png'
+                              : 'images/githubLight.png'
+                          }
+                          alt='Github link'
+                          aria-label='github link'
+                        />
                       </a>
                       <a
-                        className='media-links'
                         href={project.live}
                         target='_blank'
                         rel='noopener noreferrer'
                         title='Live link'
                         aria-label='Live link'
                       >
-                        <FiExternalLink />
+                        <img
+                          src={
+                            theme === 'darkTheme'
+                              ? 'images/externalLinkDark.png'
+                              : 'images/externalLinkLight.png'
+                          }
+                          alt='Github link'
+                          aria-label='github link'
+                        />
                       </a>
                     </div>
                   </div>

@@ -5,8 +5,6 @@ import Particle from './Particles'
 import { Fade } from 'react-awesome-reveal'
 
 const StyledWrapper = styled.section`
-  /* transition: ${(props) => props.theme.themeTransition.transition}; */
-  /* background-color: ${(props) => props.theme.body}; */
   -webkit-transition: background-image 0.5s linear;
   transition: background-image 0.5s linear;
   background-repeat: no-repeat;
@@ -74,7 +72,7 @@ const StyledH4 = styled.h4`
   padding-left: 0.9rem;
   font-family: 'Roboto Mono', monospace;
   margin-bottom: 8px;
-
+  transition: color 0.5s linear;
   @media (max-width: 500px) {
     padding-left: 0.4rem;
     padding-top: 1rem;
@@ -84,18 +82,21 @@ const StyledH1 = styled.h1`
   font-size: clamp(35px, 8vw, 80px);
   font-weight: 600;
   line-height: 1.1;
+  transition: color 0.5s linear;
   font-family: 'Inter', sans-serif;
 `
 const StyledH3 = styled.h3`
   font-size: clamp(10px, 5.5vw, 50px);
   font-weight: 600;
   margin: 8px 0;
+  transition: color 0.5s linear;
   font-family: 'Inter', sans-serif;
 `
 const StyledP = styled.p`
   /* width: 650px; */
   max-width: 650px;
   font-size: 20px;
+  transition: color 0.5s linear;
   color: ${(props) => props.theme.lightText};
   line-height: 1.5;
   @media (max-width: 500px) {

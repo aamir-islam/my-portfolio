@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import { useNav } from '../hooks/useNav'
 
 const StyledContactWrapper = styled.section`
   width: 100%;
   box-sizing: border-box;
+  padding-top: 3px;
+  padding-bottom: 4rem;
 `
 const StyledContact = styled.div`
   width: 80%;
@@ -14,6 +17,7 @@ const StyledContact = styled.div`
     font-size: 18px;
     color: ${(props) => props.theme.lightText};
     text-decoration: none;
+    border-bottom: 1px solid ${(props) => props.theme.lightText};
     &:hover {
       color: ${(props) => props.theme.body};
       background-color: ${(props) => props.theme.text};
@@ -99,6 +103,7 @@ const Button = styled.button`
 `
 
 const Contact = () => {
+  const contactRef = useNav('Contact')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -113,28 +118,30 @@ const Contact = () => {
   }
   const handleOnSubmit = async (e) => {
     e.preventDefault()
+
     const details = {
       name: name,
       email: email,
       message: message,
     }
     try {
-      let response = await fetch('/contact', {
+      let response = await fetch('http://localhost:5000/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
         },
         body: JSON.stringify(details),
       })
-        let data = await response.json()
-        console.log(data);
+      let data = await response.json()
+      alert(data.status)
+      setFormData({ email: '', name: '', message: '' })
     } catch {
-        console.log('error')
+      alert('Something went wrong')
     }
   }
   return (
     <>
-      <StyledContactWrapper>
+      <StyledContactWrapper id='contactContainer' ref={contactRef}>
         <StyledContact>
           <H1>Ping Me!</H1>
           <P>
@@ -175,6 +182,7 @@ const Contact = () => {
                 type='text'
                 id='name'
                 name='name'
+                value={name}
                 onChange={onChange}
                 required
               />
@@ -185,6 +193,7 @@ const Contact = () => {
                 type='email'
                 id='email'
                 name='email'
+                value={email}
                 onChange={onChange}
                 required
               />
@@ -195,6 +204,7 @@ const Contact = () => {
                 id='message'
                 rows={5}
                 name='message'
+                value={message}
                 onChange={onChange}
                 required
               />

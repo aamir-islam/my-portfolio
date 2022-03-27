@@ -2,10 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { useNav } from '../hooks/useNav'
 import { Fade } from 'react-awesome-reveal'
-// import Particles from 'react-tsparticles'
 const StyledAboutMeWrapper = styled.section`
-  /* transition: ${(props) => props.theme.themeTransition.transition};
-  background-color: ${(props) => props.theme.body}; */
   @media (max-width: 500px) {
     width: 100%;
   }

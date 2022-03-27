@@ -74,8 +74,8 @@ const BlogListContainer = styled.div`
     }
 
     img {
+      width: 25px;
       height: 25px;
-      will-change: 25px;
       color: red;
       padding-left: 5px;
     }

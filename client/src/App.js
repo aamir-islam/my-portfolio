@@ -5,7 +5,7 @@ import Main from './components/Main'
 import Navbar from './components/Nav/Navbar'
 import NavProvider from './context/NavContext'
 import { useState } from 'react'
-
+import './App.css'
 function App() {
   const [theme, setTheme] = useState('darkTheme')
   const [isOpen, setIsOpen] = useState(false)
