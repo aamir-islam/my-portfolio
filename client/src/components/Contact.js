@@ -125,13 +125,16 @@ const Contact = () => {
       message: message,
     }
     try {
-      let response = await fetch('/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify(details),
-      })
+      let response = await fetch(
+        'https://aryaman-singh.herokuapp.com/contact',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          },
+          body: JSON.stringify(details),
+        }
+      )
       let data = await response.json()
       alert(data.status)
       setFormData({ email: '', name: '', message: '' })
