@@ -1,110 +1,50 @@
 export const FeaturedProjectsList = [
   {
     id: 1,
-    title: 'Typing',
-    subject: 'Notes App',
+    title: 'Skillwatch',
+    subject: 'Employees Performance System',
     description:
-      'Typing is an easy-to-use encrypted note-taking app for digitalists and professionals. Capture your notes, documents, and lifes work all in one place.',
-    languages: ['React', 'MongoDB', 'Express', 'MUI', 'Draft.js'],
-    img: 'images/typing.webp',
-    live: 'https://typingnotes.herokuapp.com/',
-    github: 'https://github.com/Aryaman2803/Typing_Clean',
+      `Skillwatch allows you to define performance criteria, establish timelines, and effortlessly manage the entire process, freeing up valuable time and resources.`,
+    languages: ['React', 'TypeScript', 'RTK Query', 'Medly components', 'Redux'],
+    img: 'images/skillwatch.png',
+    live: 'https://skillwatch.app/',
+    // github: '',
   },
   {
     id: 2,
-    title: 'Profile Visualizer',
-    subject: 'Github Profile Visualizer',
+    title: 'Noobstorm',
+    subject: 'Gaming Platform',
     description:
-      'A github profile visualizer to display commits per quarter, most starred repositories, repos per language and sort by featuer on repositories.',
-    languages: ['React', 'Chart.Js', 'UseQuery'],
-    img: 'images/visualizer2.webp',
-    live: 'https://github-repo-visualizer.netlify.app/',
-    github: 'https://github.com/Aryaman2803/repo-visualization',
+      `Noobstorm is a community for gamers, by gamers. From cross-platform tournaments to active recruiting – we’re creating an opportunity for you to go pro.`,
+    languages: ['Next js', 'MUI', 'redux thunk', 'supabase'],
+    img: 'images/noobstrom.png',
+    live: 'https://www.noobstorm.gg/',
+    // github: '',
   },
   {
     id: 3,
-    title: 'Insta',
-    subject: 'Instagram Clone',
+    title: 'GraySon Sky',
+    subject: 'Creative Agency',
     description:
-      'An Instagram clone with authentication through firebase,user profile display, like-unlike post functionality. Comments on posts and Follow users suggestion.',
-    languages: ['React', 'Tailwind', 'Firebase'],
-    img: 'images/insta1.webp',
-    live: 'https://instagram-chi.vercel.app/login',
-    github: 'https://github.com/Aryaman2803/instagram-clone',
+      'Grayson Sky is a creative agency in Old City, Philadelphia. We work closely with our clients to expand their reach and brand presence through smart design, tactical communication, and effective digital strategy.',
+    languages: ['Next Js', 'Styled-componenet', 'framer motion'],
+    img: 'images/graysonsky.png',
+    live: 'https://graysonsky.com/',
+    // github: '',
   },
 ]
 
 export const OtherProjects = [
-  {
-    id: 1,
-    title: 'Camping',
-    description:
-      'Camping is a website where users can create and review campgrounds they have visited or want to explore camping sites for their travel destination.',
-    languages: ['EJS', 'Express', 'Node.js', 'MongoDB', 'Bootstrap'],
-    live: 'https://campinggrounds.herokuapp.com/',
-    github: 'https://github.com/Aryaman2803/Camping',
-  },
-  {
-    id: 2,
-    title: 'GetSupplies',
-    description:
-      'GetSupplies is an e-commerce website where users can buy products. Complete with a shopping cart, checkout, and payment functionality.',
-    languages: ['EJS', 'Express', 'MongoDB', 'Stripe', 'SASS'],
-    live: 'https://getsupplies.herokuapp.com/index',
-    github: 'https://github.com/Aryaman2803/E-Commerce-Website',
-  },
-  {
-    id: 3,
-    title: 'Hyperstream',
-    description:
-      'A web app for chatting with friends and family. It is a real time chat app where users can chat with each other and share their thoughts.',
-    languages: ['React', 'Socket.io', 'MongoDB', 'Bootstrap'],
-    live: 'https://hyperstream.vercel.app/',
-    github: 'https://github.com/Aryaman2803/React-Chat-App',
-  },
-  {
-    id: 4,
-    title: 'Memory Game',
-    description:
-      'A memory game where users can play with cards and try to find the matching pairs.',
-    languages: ['JavaScript', 'CSS'],
-    live: 'https://memory-gaming.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Memory-Game',
-  },
-  {
-    id: 5,
-    title: 'Event-KeyCodes',
-    description:
-      'A web app to display the key code of the letter while typing.',
-    languages: ['JavaScript', 'CSS'],
-    live: 'https://eventkeycode.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Event-KeyCodes',
-  },
-  {
-    id: 6,
-    title: 'Meditation App',
-    description:
-      'A meditation/ambient sounds app that a user can enjoy by picking the amount of time to listen to and choose different ambient sounds.',
-    languages: ['JavaScript', 'CSS'],
-    live: 'https://meditator.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Meditation-App_Js',
-  },
-  {
-    id: 7,
-    title: 'Get Emojis',
-    description: 'A web app to get emojis from the internet.',
-    languages: ['React', 'CSS'],
-    live: 'https://react-emoji.netlify.app/',
-    github: 'https://github.com/Aryaman2803/React-Emoji-Project',
-  },
+ 
+  
   {
     id: 8,
-    title: 'Movie App',
+    title: 'Cryptoverse',
     description:
-      'The app will be able to search for movies via the MovieDB API and render the results to the user.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://movifind.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Movie-App',
+      'The app will be able to search for Crypto currency via API and render the results to the user.',
+    languages: ['Axios', 'millify', 'React JS', 'chartjs-2'],
+    live: 'https://crypto-globe.vercel.app/',
+    github: 'https://github.com/aamir-islam/CryptoGlobe',
   },
   {
     id: 9,
@@ -112,110 +52,20 @@ export const OtherProjects = [
     description:
       'A todo list app that allows users to add, edit, and delete tasks.',
     languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://frontend-mentor-todolist.netlify.app/',
+    live: 'https://todo-list-tau-gilt.vercel.app/',
     github:
-      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/todo-app-main',
+      'https://github.com/aamir-islam/Todo-list',
   },
   {
     id: 10,
-    title: 'Sound Board',
-    description: 'A sound board app that allows users to play sounds.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://soundsboard.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Sound-Board',
+    title: 'Book-my-flim',
+    description: 'A Movie booking app that allows users to book movie ticket',
+    languages: ['React JS', 'CSS', 'JavaScript', 'TypeScript'],
+    live: 'https://book-my-flim.netlify.app/',
+    github: 'https://github.com/aamir-islam/MovieBookingTS',
   },
-  {
-    id: 11,
-    title: 'Split Landing Page',
-    description: 'A PS Box and Xbox split landing page.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://pagelandingsplit.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Split-Landing-Page',
-  },
-  {
-    id: 12,
-    title: 'Fylo Landing Page',
-    description: 'Frontend mentor fylo dark theme landing page challenge.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://fylo-landing-pge.netlify.app/',
-    github:
-      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/fylo-dark-theme-landing-page-master',
-  },
-  {
-    id: 13,
-    title: 'Order Summary Card',
-    description: 'Frontend mentor Order Summary Card challenge.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://frontend-mentor-order-summary.netlify.app/',
-    github:
-      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/order-summary-component-main',
-  },
-  {
-    id: 14,
-    title: 'Theme Clock',
-    description: 'A beautiful analog clock with dark toggle mode.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://themeclock.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Theme-Clock',
-  },
-  {
-    id: 15,
-    title: 'Drink Water',
-    description: 'Keep a record of drinking water.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://drinkwaterrecord.netlify.app/',
-    github: 'hhttps://github.com/Aryaman2803/Drink-Water',
-  },
-  {
-    id: 16,
-    title: 'Dad Jokes',
-    description: 'A dad jokes app that allows users to get a random joke.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://dadjokess.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Dad-Jokes',
-  },
-  {
-    id: 17,
-    title: 'Filter Search Bar',
-    description:
-      'A filter search bar that allows users to search for a specific item.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://filter-user.netlify.app/',
-    github:
-      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/Live-user-filter',
-  },
-  {
-    id: 18,
-    title: 'Time Tracking Dashboard',
-    description: 'Frontend mentor time tracking dashboard challenge.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://frontend-mentor-time-tracking-dashboard.netlify.app/',
-    github:
-      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/time-tracking-dashboard-main',
-  },
-  {
-    id: 19,
-    title: 'Tip Calculator',
-    description: 'A tip calculator that allows users to calculate the tip.',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://frontend-mentor-moneysplit.netlify.app/',
-    github:
-      'https://github.com/Aryaman2803/Frontend-Mentor/tree/master/tip-calculator-app-main',
-  },
-  {
-    id: 20,
-    title: 'Wave Form Animation',
-    description: 'Wave effect on the input labels',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    live: 'https://labelwaveanimatio.netlify.app/',
-    github: 'https://github.com/Aryaman2803/Wave-Form-Animation',
-  },
+  
+
 ]
 
-export const BlogsList = [
-  {
-    id: 1,
-    title: 'Building a list filter in React with Styled Component',
-    link: 'https://aryamansingh.hashnode.dev/building-a-sort-by-list-feature-in-react-with-styled-component',
-  },
-]
+

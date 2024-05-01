@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { useNav } from '../hooks/useNav'
+import emailjs from "@emailjs/browser";
 
 const StyledContactWrapper = styled.section`
   width: 100%;
@@ -116,25 +117,21 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     }))
   }
+  
   const handleOnSubmit = async (e) => {
     e.preventDefault()
-
     const details = {
       name: name,
       email: email,
       message: message,
     }
     try {
-      let response = await fetch(
-        'https://aryaman-singh.herokuapp.com/contact',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-          },
-          body: JSON.stringify(details),
-        }
-      )
+      const response = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        details, // assuming e.target contains the form
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
       let data = await response.json()
       alert(data.status)
       setFormData({ email: '', name: '', message: '' })
@@ -154,7 +151,7 @@ const Contact = () => {
           <P>
             Use the form below. Or, for a quicker response, ping me over on{' '}
             <a
-              href='https://www.linkedin.com/in/aryaman-singh2803/'
+              href='https://www.linkedin.com/in/aamir-islam3/'
               aria-label='linkedin'
               target='_blank'
               rel='noreferrer'
@@ -167,13 +164,13 @@ const Contact = () => {
           <P>
             Alternatively, shoot me an email at{' '}
             <a
-              href='mailto:aryamansingh2803@gmail.com'
+              href='aamirislam38@gmail.com'
               aria-label='email'
               target='_blank'
               rel='noreferrer'
               className='external-link'
             >
-              aryamansingh2803@gmail.com
+              aamirislam38@gmail.com
             </a>
             .
           </P>

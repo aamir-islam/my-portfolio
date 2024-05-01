@@ -3,7 +3,6 @@ const LandingPage = React.lazy(() => import('.//LandingPage'))
 const Projects = React.lazy(() => import('./Projects/Projects'))
 const MoreProjects = React.lazy(() => import('./Projects/MoreProjects'))
 const Contact = React.lazy(() => import('./Contact'))
-const Blogs = React.lazy(() => import('./Blogs'))
 const AboutMe = React.lazy(() => import('./AboutMe'))
 
 const Main = ({ theme, isOpen }) => {
@@ -22,7 +21,7 @@ const Main = ({ theme, isOpen }) => {
         <AboutMe theme={theme} />
         <Projects theme={theme} />
         <MoreProjects theme={theme} />
-        <Blogs theme={theme} />
+        {/* <Blogs theme={theme} /> */}
         <Contact />
       </Suspense>
     </div>

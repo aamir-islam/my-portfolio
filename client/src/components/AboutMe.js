@@ -253,27 +253,9 @@ const AboutMe = () => {
             <StyledLeft>
               <Fade cascade triggerOnce>
                 <Article>
-                  I&apos;m a front-end developer from Lucknow, India.
+                  I&apos;m a front-end developer from Sikandrabad UP, India.
                   <br />I enjoy turning complex problems into simple, beautiful
-                  and intuitive designs. When I'm not pushing pixels, you'll
-                  find me scrolling twitter checking out <em>#ReactJS posts</em>
-                  , playing with my dogs Snowy &nbsp;
-                  <img
-                    src='images/snowy.png'
-                    height='20px'
-                    width='auto'
-                    alt='snowy - Dog'
-                    aria-label='snowy - Dog'
-                  />
-                  &nbsp; &amp; Simba&nbsp;
-                  <img
-                    src='images/simba.png'
-                    height='20px'
-                    width='auto'
-                    alt='Simba - Dog'
-                    aria-label='simba - Dog'
-                  />
-                  &nbsp; or eating probably.
+                  and intuitive designs.
                 </Article>
                 <Fade delay={300} triggerOnce>
                   <H3Left
@@ -289,27 +271,18 @@ const AboutMe = () => {
                     <StyledLi>
                       <Fade triggerOnce>
                         <StyledLiContent>
-                          <div>Full Stack Developer Intern</div>
-                          <p>Cognizant Technology Solutions</p>
-                          <span>Jan 2022- </span>
+                          <div>SDE 1</div>
+                          <p>Scalereal Technology Pvt Ltd</p>
+                          <span>May 2022-Present</span>
                         </StyledLiContent>
                       </Fade>
                     </StyledLi>
                     <StyledLi>
                       <Fade delay={1150} triggerOnce>
                         <StyledLiContent>
-                          <div>Project Intern</div>
-                          <p>Phemsoft Software Pvt Ltd</p>
-                          <span>Jun 2021- Aug 2021</span>
-                        </StyledLiContent>
-                      </Fade>
-                    </StyledLi>
-                    <StyledLi>
-                      <Fade delay={1250} triggerOnce>
-                        <StyledLiContent>
-                          <div>Social Intern</div>
-                          <p>Brij Rani Charitable Trust</p>
-                          <span>Jun 2020- Jul 2020</span>
+                          <div>Frontend Intern</div>
+                          <p>Yuwaiting Technologies Pvt. Ltd</p>
+                          <span>Nov 2021- Apr 2022</span>
                         </StyledLiContent>
                       </Fade>
                     </StyledLi>
@@ -317,10 +290,10 @@ const AboutMe = () => {
                       <Fade delay={1350} triggerOnce>
                         <StyledLiContent>
                           <div>
-                            University Of Petroleum &amp; Energy Studies
+                            ABES Engineering Collge
                           </div>
-                          <p>B.Tech in Computer Science Engineering</p>
-                          <span>Aug 2018- </span>
+                          <p>Master of Computer Application</p>
+                          <span>Aug 2017- Jul 2019 </span>
                         </StyledLiContent>
                       </Fade>
                     </StyledLi>
@@ -401,12 +374,12 @@ const AboutMe = () => {
                   >
                     <StyledLogos>
                       <img
-                        src='images/mongodb.svg'
+                        src='images/typescript.svg'
                         alt='mongodb'
                         aria-label='mongodb icon'
                         tabIndex='0'
                       />
-                      <p>MongoDB</p>
+                      <p>TypeScript</p>
                     </StyledLogos>
                   </a>
                   <a
@@ -416,12 +389,12 @@ const AboutMe = () => {
                   >
                     <StyledLogos>
                       <img
-                        src='images/express.svg'
+                        src='images/nextjs.svg'
                         alt='express'
                         aria-label='express icon'
                         tabIndex='0'
                       />
-                      <p>Express</p>
+                      <p>Next Js</p>
                     </StyledLogos>
                   </a>
                   <a
@@ -461,12 +434,12 @@ const AboutMe = () => {
                   >
                     <StyledLogos>
                       <img
-                        src='images/c.svg'
-                        alt='c++'
-                        aria-label='c++ icon'
+                        src='images/material-ui.svg'
+                        alt='mui'
+                        aria-label='mui icon'
                         tabIndex='0'
                       />
-                      <p>C++</p>
+                      <p>MUI</p>
                     </StyledLogos>
                   </a>
                 </Fade>

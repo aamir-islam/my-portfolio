@@ -179,7 +179,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
     return (
       <>
         <StyledA
-          href='https://www.linkedin.com/in/aryaman-singh2803/'
+          href='https://www.linkedin.com/in/aamir-islam3/'
           target='_blank'
           rel='noopener noreferrer'
           title='linkedin'
@@ -200,7 +200,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           
         </StyledA>
         <StyledA
-          href='https://github.com/Aryaman2803'
+          href='https://github.com/aamir-islam'
           target='_blank'
           rel='noopener noreferrer'
           title='Github'
@@ -219,21 +219,6 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
             aria-label='github icon'
           />
         </StyledA>
-        <i tabIndex='0s' title='Twitter'>
-          <img
-            src={
-              window.innerWidth < 768
-                ? 'images/twitterDark.png'
-                : theme === 'darkTheme'
-                ? 'images/twitterDark.png'
-                : 'images/twitterLight.png'
-            }
-            alt='twitter'
-            aria-label='twitter icon'
-            height='24px'
-            width='24px'
-          />
-        </i>
         <i title='Email' tabIndex='0s'>
           <img
             src={
