@@ -136,7 +136,7 @@ const Contact = () => {
       alert(data.status)
       setFormData({ email: '', name: '', message: '' })
     } catch {
-      alert('Something went wrong')
+      alert('Something went wrong!')
     }
   }
   return (
