@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { useNav } from '../hooks/useNav'
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 const StyledContactWrapper = styled.section`
   width: 100%;
@@ -126,14 +126,14 @@ const Contact = () => {
       message: message,
     }
     try {
-      const response = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        details, // assuming e.target contains the form
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
-      let data = await response.json()
-      alert(data.status)
+      // const response = await emailjs.sendForm(
+      //   process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      //   process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      //   details, // assuming e.target contains the form
+      //   process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      // );
+      // let data = await response.json()
+      // alert(data.status)
       setFormData({ email: '', name: '', message: '' })
     } catch {
       alert('Something went wrong!')

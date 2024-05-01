@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-const LandingPage = React.lazy(() => import('.//LandingPage'))
+const LandingPage = React.lazy(() => import('./LandingPage'))
 const Projects = React.lazy(() => import('./Projects/Projects'))
 const MoreProjects = React.lazy(() => import('./Projects/MoreProjects'))
 const Contact = React.lazy(() => import('./Contact'))
