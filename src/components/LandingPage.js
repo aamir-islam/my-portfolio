@@ -129,7 +129,7 @@ const LandingPage = ({ theme }) => {
   const landingPageRef = useNav("Home"); // this is the ref for the navbar
   const showResume = () => {
     window.open(
-      "https://drive.google.com/file/d/1Km1edUkPwaEC1rMMZs7Ge_RW-DoM8VI6/view?usp=drive_link"
+      "https://drive.google.com/file/d/1EZLJUblXXisYBCRd9tY7uY-KAo_68zN3/view?usp=sharing"
     );
   };
   return (
@@ -162,11 +162,11 @@ const LandingPage = ({ theme }) => {
                 A Frontend Developer.
               </StyledH3>
               <StyledP aria-label="paragraph" role="article" tabIndex="0">
-                I&apos;m a experienced Frontend Developer with 2+ years of
+                I&apos;m a experienced Frontend Developer with 2.6 years of
                 expertise in building robust frontend solutions. Skilled in
                 initiating SAAS projects, optimizing load times, and enhancing
-                user experiences. Proficient in JavaScript, React JS, Redux, and
-                advanced optimization techniques.
+                user experiences. Proficient in JavaScript, React JS, Redux,
+                TypeScript and advanced optimization techniques.
               </StyledP>
               <Button onClick={showResume}>See My Resume</Button>
             </Fade>

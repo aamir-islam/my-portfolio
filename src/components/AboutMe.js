@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import { useNav } from '../hooks/useNav'
-import { Fade } from 'react-awesome-reveal'
+import React from "react";
+import styled from "styled-components/macro";
+import { useNav } from "../hooks/useNav";
+import { Fade } from "react-awesome-reveal";
 const StyledAboutMeWrapper = styled.section`
   @media (max-width: 500px) {
     width: 100%;
   }
-`
+`;
 
 const StyledAboutMe = styled.section`
   box-sizing: border-box;
@@ -23,39 +23,39 @@ const StyledAboutMe = styled.section`
   @media (max-width: 500px) {
     padding: 0 1.2rem;
   }
-`
+`;
 
 const H1 = styled.h1`
   font-size: clamp(40px, 5.5vw, 60px);
   margin-bottom: 2rem;
   margin-top: 4rem;
   padding-top: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   @media (max-width: 500px) {
     margin-top: 4.5rem;
   }
-`
+`;
 
 const StyledContainer = styled.div`
   display: flex;
   @media (max-width: 913px) {
     flex-direction: column;
   }
-`
+`;
 const StyledLeft = styled.div`
   /* border: 3px solid palegoldenrod; */
   width: 50%;
   @media (max-width: 913px) {
     width: 100%;
   }
-`
+`;
 const StyledRight = styled.div`
   /* border: 3px solid green; */
   width: 50%;
   @media (max-width: 913px) {
     width: 100%;
   }
-`
+`;
 const Article = styled.article`
   /* border: 3px solid purple; */
   line-height: 1.2;
@@ -75,9 +75,9 @@ const Article = styled.article`
       transition: height 0.2s ease-in-out;
     }
   }
-`
+`;
 const H3Left = styled.h3`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 1.5rem 0;
   font-size: clamp(10px, 5.5vw, 22px);
   padding: 1rem 3.8rem;
@@ -90,10 +90,10 @@ const H3Left = styled.h3`
   @media (max-width: 500px) {
     padding: 1rem 0;
   }
-`
+`;
 
 const H3 = styled.h3`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 1.5rem 0;
   font-size: clamp(10px, 5.5vw, 22px);
   padding: 1rem 3.8rem;
@@ -103,7 +103,7 @@ const H3 = styled.h3`
     font-size: clamp(20px, 3vw, 30px);
     text-align: center;
   }
-`
+`;
 const StyledExp = styled.div`
   border-radius: 15px;
   padding: 1rem 2rem;
@@ -116,9 +116,9 @@ const StyledExp = styled.div`
   @media (max-width: 500px) {
     padding: 0;
   }
-`
+`;
 
-const StyledUl = styled.ul``
+const StyledUl = styled.ul``;
 
 const StyledLiContent = styled.div`
   max-width: 400px;
@@ -132,14 +132,14 @@ const StyledLiContent = styled.div`
     width: 95%;
     padding: 0.5rem;
   }
-`
+`;
 const StyledLi = styled.li`
   padding-bottom: 2rem;
   border-left: 2px solid #abaaed;
   position: relative;
   padding-left: 20px;
   margin-left: 10px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 
   &:last-child {
     border: 0;
@@ -147,7 +147,7 @@ const StyledLi = styled.li`
     padding-bottom: 0rem;
   }
   &:before {
-    content: '';
+    content: "";
     width: 15px;
     height: 15px;
     background: white;
@@ -195,7 +195,7 @@ const StyledLi = styled.li`
       }
     }
   }
-`
+`;
 const StyledLogosWrapper = styled.div`
   /* border: 1px solid red; */
   display: grid;
@@ -210,7 +210,7 @@ const StyledLogosWrapper = styled.div`
   a {
     text-decoration: none;
   }
-`
+`;
 const StyledLogos = styled.div`
   padding: 0.8rem 0.5rem 0.5rem 0.5rem;
   box-shadow: ${(props) => props.theme.boxShadow};
@@ -229,7 +229,7 @@ const StyledLogos = styled.div`
   p {
     color: ${(props) => props.theme.text};
     margin-top: 0.5rem;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 600;
     letter-spacing: 0.5px;
 
@@ -238,15 +238,15 @@ const StyledLogos = styled.div`
       letter-spacing: 0.2px;
     }
   }
-`
+`;
 
 const AboutMe = () => {
-  const aboutRef = useNav('About')
+  const aboutRef = useNav("About");
 
   return (
     <StyledAboutMeWrapper>
-      <StyledAboutMe id='aboutContainer' ref={aboutRef}>
-        <div style={{ position: 'relative' }}>
+      <StyledAboutMe id="aboutContainer" ref={aboutRef}>
+        <div style={{ position: "relative" }}>
           <H1>About Me</H1>
 
           <StyledContainer>
@@ -259,9 +259,9 @@ const AboutMe = () => {
                 </Article>
                 <Fade delay={300} triggerOnce>
                   <H3Left
-                    aria-label='Experience and Education'
-                    aria-level='1'
-                    title='Experience and education'
+                    aria-label="Experience and Education"
+                    aria-level="1"
+                    title="Experience and education"
                   >
                     Experience &amp; Education
                   </H3Left>
@@ -280,7 +280,7 @@ const AboutMe = () => {
                     <StyledLi>
                       <Fade delay={1150} triggerOnce>
                         <StyledLiContent>
-                          <div>Frontend Intern</div>
+                          <div>Frontend Developer</div>
                           <p>Yuwaiting Technologies Pvt. Ltd</p>
                           <span>Nov 2021- Apr 2022</span>
                         </StyledLiContent>
@@ -289,11 +289,9 @@ const AboutMe = () => {
                     <StyledLi>
                       <Fade delay={1350} triggerOnce>
                         <StyledLiContent>
-                          <div>
-                            ABES Engineering Collge
-                          </div>
-                          <p>Master of Computer Application</p>
-                          <span>Aug 2017- Jul 2019 </span>
+                          <div>Computer Teacher</div>
+                          <p>M.Tech Computer Education Center</p>
+                          <span>Oct 2019 - Jun 2021</span>
                         </StyledLiContent>
                       </Fade>
                     </StyledLi>
@@ -302,142 +300,142 @@ const AboutMe = () => {
               </Fade>
             </StyledLeft>
             <StyledRight>
-              <H3 aria-level='1' title='Skills' aria-label='Skills section'>
+              <H3 aria-level="1" title="Skills" aria-label="Skills section">
                 Skills
               </H3>
               <StyledLogosWrapper>
-                <Fade cascade damping='0.25' triggerOnce>
+                <Fade cascade damping="0.25" triggerOnce>
                   <a
-                    href='https://developer.mozilla.org/en-US/docs/Glossary/HTML5'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/html5.svg'
-                        alt='html'
-                        aria-label='html icon'
-                        tabIndex='0'
+                        src="images/html5.svg"
+                        alt="html"
+                        aria-label="html icon"
+                        tabIndex="0"
                       />
                       <p>Html5</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://developer.mozilla.org/en-US/docs/Web/CSS'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/css3.svg'
-                        alt='css3'
-                        aria-label='css3 icon'
-                        tabIndex='0'
+                        src="images/css3.svg"
+                        alt="css3"
+                        aria-label="css3 icon"
+                        tabIndex="0"
                       />
                       <p>CSS3</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://www.javascript.com/'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://www.javascript.com/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/javascript.svg'
-                        alt='javascript'
-                        aria-label='javascript icon'
-                        tabIndex='0'
+                        src="images/javascript.svg"
+                        alt="javascript"
+                        aria-label="javascript icon"
+                        tabIndex="0"
                       />
                       <p>JavaScript</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://reactjs.org/'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://reactjs.org/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/react.svg'
-                        alt='react'
-                        aria-label='react icon'
-                        tabIndex='0'
+                        src="images/react.svg"
+                        alt="react"
+                        aria-label="react icon"
+                        tabIndex="0"
                       />
                       <p>React</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://www.mongodb.com/'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://www.mongodb.com/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/typescript.svg'
-                        alt='mongodb'
-                        aria-label='mongodb icon'
-                        tabIndex='0'
+                        src="images/typescript.svg"
+                        alt="mongodb"
+                        aria-label="mongodb icon"
+                        tabIndex="0"
                       />
                       <p>TypeScript</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://expressjs.com/'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://expressjs.com/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/nextjs.svg'
-                        alt='express'
-                        aria-label='express icon'
-                        tabIndex='0'
+                        src="images/nextjs.svg"
+                        alt="express"
+                        aria-label="express icon"
+                        tabIndex="0"
                       />
                       <p>Next Js</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://nodejs.org/'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://nodejs.org/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/node-js.svg'
-                        alt='node'
-                        aria-label='node icon'
-                        tabIndex='0'
+                        src="images/node-js.svg"
+                        alt="node"
+                        aria-label="node icon"
+                        tabIndex="0"
                       />
                       <p>Node Js</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://sass-lang.com/'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://sass-lang.com/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/sass.svg'
-                        alt='sass'
-                        aria-label='sass icon'
-                        tabIndex='0'
+                        src="images/sass.svg"
+                        alt="sass"
+                        aria-label="sass icon"
+                        tabIndex="0"
                       />
                       <p>Sass</p>
                     </StyledLogos>
                   </a>
                   <a
-                    href='https://www.cplusplus.com/'
-                    target='_blank'
-                    rel='noreferrer'
+                    href="https://www.cplusplus.com/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <StyledLogos>
                       <img
-                        src='images/material-ui.svg'
-                        alt='mui'
-                        aria-label='mui icon'
-                        tabIndex='0'
+                        src="images/material-ui.svg"
+                        alt="mui"
+                        aria-label="mui icon"
+                        tabIndex="0"
                       />
                       <p>MUI</p>
                     </StyledLogos>
@@ -449,7 +447,7 @@ const AboutMe = () => {
         </div>
       </StyledAboutMe>
     </StyledAboutMeWrapper>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;

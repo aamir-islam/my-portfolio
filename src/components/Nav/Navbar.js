@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import NavLink from './NavLink'
-import { navLinks } from './navLinks'
-import { m, domAnimation, LazyMotion } from 'framer-motion'
-import MoonSvg from '../assets/MoonSvg'
-import SunSvg from '../assets/SunSvg'
+import React from "react";
+import styled from "styled-components/macro";
+import NavLink from "./NavLink";
+import { navLinks } from "./navLinks";
+import { m, domAnimation, LazyMotion } from "framer-motion";
+import MoonSvg from "../assets/MoonSvg";
+import SunSvg from "../assets/SunSvg";
 
 const StyledNavbar = styled.nav`
   background-color: ${(props) => props.theme.navbar.body};
@@ -21,19 +21,19 @@ const StyledNavbar = styled.nav`
   box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
     rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
   transition: ${(props) => props.theme.themeTransition.transition};
-`
+`;
 const StyledName = styled.span`
   transition: all 1.5s linear;
   img {
     height: 80px;
     width: 90px;
   }
-`
+`;
 const StyledLinks = styled.span`
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;
 const StyledIcons = styled.span`
   & > * {
     font-size: 24px;
@@ -56,7 +56,7 @@ const StyledIcons = styled.span`
       margin: 0 0.4rem;
     }
   }
-`
+`;
 const StyledA = styled.a`
   /* color: ${(props) => props.theme.navbar.text}; */
   img {
@@ -67,7 +67,7 @@ const StyledA = styled.a`
       transition: all 0.2s ease-in-out;
     }
   }
-`
+`;
 
 const Button = styled.button`
   background-color: transparent;
@@ -76,7 +76,7 @@ const Button = styled.button`
   @media (max-width: 770px) {
     font-size: 24px;
   }
-`
+`;
 const HamburgerBtn = styled.i`
   font-size: 24px;
   display: none;
@@ -85,7 +85,7 @@ const HamburgerBtn = styled.i`
   @media (max-width: 768px) {
     display: block;
   }
-`
+`;
 const StyledMobileMenu = styled.div`
   position: fixed;
   top: 75px;
@@ -111,7 +111,7 @@ const StyledMobileMenu = styled.div`
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-`
+`;
 const StyledMobileLink = styled.div`
   color: #0e1111;
   letter-spacing: 1.2px;
@@ -121,7 +121,7 @@ const StyledMobileLink = styled.div`
     transform: scale(1.1);
     transition: all 0.2s ease-in-out;
   }
-`
+`;
 const SocialMediaWrapper = styled.div`
   /* border: 1px solid pink; */
   display: flex;
@@ -144,99 +144,98 @@ const SocialMediaWrapper = styled.div`
     transform: scale(1.1);
     transition: all 0.2s ease-in-out;
   }
-`
+`;
 
 const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const toggleTheme = () => {
-    if (theme === 'lightTheme') setTheme('darkTheme')
-    else setTheme('lightTheme')
-  }
+    if (theme === "lightTheme") setTheme("darkTheme");
+    else setTheme("lightTheme");
+  };
 
   const themeSwitch = () => {
     return (
       <Button onClick={toggleTheme}>
-        {theme === 'lightTheme' ? (
+        {theme === "lightTheme" ? (
           <i
-            role='button'
-            title='dark theme moon button'
-            aria-label='theme switcher button'
+            role="button"
+            title="dark theme moon button"
+            aria-label="theme switcher button"
           >
             <MoonSvg />
           </i>
         ) : (
           <i
-            role='button'
-            title='light theme moon button'
-            aria-label='theme switcher button'
+            role="button"
+            title="light theme moon button"
+            aria-label="theme switcher button"
           >
             <SunSvg />
           </i>
         )}
       </Button>
-    )
-  }
+    );
+  };
   const SocialMediaIcons = () => {
     return (
       <>
         <StyledA
-          href='https://www.linkedin.com/in/aamir-islam3/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='linkedin'
-          tabIndex='0s'
-          aria-label='linkedin icon'
+          href="https://www.linkedin.com/in/aamir-islam3/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="linkedin"
+          tabIndex="0s"
+          aria-label="linkedin icon"
         >
           <img
             src={
               window.innerWidth < 768
-                ? 'images/linkedinDark.png'
-                : theme === 'darkTheme'
-                ? 'images/linkedinDark.png'
-                : 'images/linkedinLight.png'
+                ? "images/linkedinDark.png"
+                : theme === "darkTheme"
+                ? "images/linkedinDark.png"
+                : "images/linkedinLight.png"
             }
-            alt='linkedin'
-            aria-label='linkedin icon'
+            alt="linkedin"
+            aria-label="linkedin icon"
           />
-          
         </StyledA>
         <StyledA
-          href='https://github.com/aamir-islam'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Github'
-          tabIndex='0s'
-          aria-label='github icon'
+          href="https://github.com/aamir-islam"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Github"
+          tabIndex="0s"
+          aria-label="github icon"
         >
           <img
             src={
               window.innerWidth < 768
-                ? 'images/githubDark.png'
-                : theme === 'darkTheme'
-                ? 'images/githubDark.png'
-                : 'images/githubLight.png'
+                ? "images/githubDark.png"
+                : theme === "darkTheme"
+                ? "images/githubDark.png"
+                : "images/githubLight.png"
             }
-            alt='github'
-            aria-label='github icon'
+            alt="github"
+            aria-label="github icon"
           />
         </StyledA>
-        <i title='Email' tabIndex='0s'>
+        <i title="Email" tabIndex="0s">
           <img
             src={
               window.innerWidth < 768
-                ? 'images/emailDark.png'
-                : theme === 'darkTheme'
-                ? 'images/emailDark.png'
-                : 'images/emailLight.png'
+                ? "images/emailDark.png"
+                : theme === "darkTheme"
+                ? "images/emailDark.png"
+                : "images/emailLight.png"
             }
-            alt='twitter'
-            aria-label='twitter icon'
-            height='24px'
-            width='24px'
+            alt="twitter"
+            aria-label="twitter icon"
+            height="24px"
+            width="24px"
           />
         </i>
       </>
-    )
-  }
+    );
+  };
 
   const mobileMenu = () => {
     return (
@@ -254,7 +253,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
                 </StyledMobileLink>
               </m.div>
             </LazyMotion>
-          )
+          );
         })}
         <LazyMotion features={domAnimation}>
           <m.div animate={{ x: [200, 0] }}>
@@ -262,48 +261,48 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           </m.div>
         </LazyMotion>
       </StyledMobileMenu>
-    )
-  }
+    );
+  };
 
   return (
     <StyledNavbar>
       <StyledName
-        title='name'
-        role='img'
-        aria-label='name'
-        tabIndex='-1'
-        aria-labelledby='aryaman'
+        title="name"
+        role="img"
+        aria-label="name"
+        tabIndex="-1"
+        aria-labelledby="aamir"
       >
         <img
           src={
-            theme === 'darkTheme'
-              ? 'images/nameDark.png'
-              : 'images/nameLight.png'
+            theme === "darkTheme"
+              ? "images/nameLight2.png"
+              : "images/nameDark2.png"
           }
-          alt='initials'
-          title='initials'
-          tabIndex='0'
-          aria-label='initials'
-          aria-labelledby='aryaman'
+          alt="initials"
+          title="Aamir Islam"
+          tabIndex="0"
+          aria-label="initials"
+          aria-labelledby="aamir"
         />
       </StyledName>
       <StyledLinks>
         {navLinks.map(({ navLinkId, scrollToId }, idx) => {
           return (
             <NavLink key={idx} navLinkId={navLinkId} scrollToId={scrollToId} />
-          )
+          );
         })}
       </StyledLinks>
       <StyledIcons>
         {SocialMediaIcons()}
         {themeSwitch()}
       </StyledIcons>
-      <HamburgerBtn aria-label='menu' role='menubar'>
+      <HamburgerBtn aria-label="menu" role="menubar">
         <span
           style={{
-            display: 'flex',
-            width: '70px',
-            justifyContent: 'space-between',
+            display: "flex",
+            width: "70px",
+            justifyContent: "space-between",
           }}
         >
           {themeSwitch()}
@@ -311,19 +310,19 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           {isOpen ? (
             <LazyMotion features={domAnimation}>
               <m.div
-                animate={{ rotate: 360, x: ['25px', '0px'] }}
-                transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
+                animate={{ rotate: 360, x: ["25px", "0px"] }}
+                transition={{ type: "spring", damping: 25, delayChildren: 0.5 }}
               >
                 <img
                   src={
-                    theme === 'darkTheme'
-                      ? 'images/closeDark.png'
-                      : 'images/closeLight.png'
+                    theme === "darkTheme"
+                      ? "images/closeDark.png"
+                      : "images/closeLight.png"
                   }
-                  height='24px'
-                  width='24px'
-                  alt='close icon'
-                  aria-label='close icon'
+                  height="24px"
+                  width="24px"
+                  alt="close icon"
+                  aria-label="close icon"
                   onClick={() => setIsOpen(false)}
                 />
               </m.div>
@@ -331,19 +330,19 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
           ) : (
             <LazyMotion features={domAnimation}>
               <m.div
-                animate={{ x: ['25px', '0px'] }}
-                transition={{ type: 'spring', damping: 25, delayChildren: 0.5 }}
+                animate={{ x: ["25px", "0px"] }}
+                transition={{ type: "spring", damping: 25, delayChildren: 0.5 }}
               >
                 <img
                   src={
-                    theme === 'darkTheme'
-                      ? 'images/hamburgerDark.png'
-                      : 'images/hamburgerLight.png'
+                    theme === "darkTheme"
+                      ? "images/hamburgerDark.png"
+                      : "images/hamburgerLight.png"
                   }
-                  alt='menu icon'
-                  aria-label='menu icon'
-                  height='22px'
-                  width='22px'
+                  alt="menu icon"
+                  aria-label="menu icon"
+                  height="22px"
+                  width="22px"
                   onClick={() => setIsOpen(true)}
                 />
               </m.div>
@@ -353,7 +352,7 @@ const Navbar = ({ isOpen, setIsOpen, theme, setTheme }) => {
       </HamburgerBtn>
       {isOpen && mobileMenu()}
     </StyledNavbar>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
